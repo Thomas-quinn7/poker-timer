@@ -1,4 +1,4 @@
-# Poker Tournament Timer
+﻿# Poker Tournament Timer
 
 A tournament blind timer built for running live poker events — written while
 running one of Ireland's largest college poker societies.
