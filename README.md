@@ -14,7 +14,9 @@ Two versions:
 
 `poker_blinds.jpeg` is the printed blind-structure sheet the default levels
 are based on. `poker_blinds_johnny.jpeg` is the same sheet with Johnny's
-Revolut QR (@johnpa61dj) for buy-ins.
+Revolut QR (@johnpa61dj) for buy-ins. `poker_blinds_cash.jpeg` is the cash-game
+version: 5c/10c blinds, €5/€10/€15 buy-ins with the chip count for each, and
+Michael's Revolut QR (@michaelt8b).
 
 ## Run
 
