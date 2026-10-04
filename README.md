@@ -56,3 +56,20 @@ any browser, no server needed.
 The short version, if you only want the one number: the breakeven on a 50 mm
 four-piece button set is around 3.50 euro. Below that, buy from China. Above
 it, Amazon UK is the same money and arrives in a third of the time.
+
+## Picking this up on another machine
+
+Two separate things live in two separate places, and only one of them is here.
+
+**In this repo**, so a `git pull` gets it: the research, the decisions and the
+reasoning behind them, plus the offline copy of the page. That is
+`KIT_SOURCING.md` and `kit-sourcing.html`.
+
+**In the Claude account**, not in the repo: the live basket figures and which
+pre-purchase boxes have been ticked. Those are at
+<https://claude.ai/artifact/E9LvqqVE2QWna55CbcAo6h> and follow the account
+across machines. The `kit-sourcing.html` copy in this repo saves to whatever
+browser opens it, so ticking a box there does not travel.
+
+So on the other box: `git pull` for the write-up, and open the artifact link
+for the working state.
