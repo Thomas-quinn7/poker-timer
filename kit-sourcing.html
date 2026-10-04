@@ -182,6 +182,9 @@
   .sidecar p { font-size: 13.5px; color: var(--ink-2); max-width: 78ch; }
   .sidecar p strong { color: var(--ink); font-weight: 600; }
   .sidecar .muted-note { font-size: 12.5px; color: var(--muted); }
+  .sidecar .warn, .sidecar .good { font-weight: 600; }
+  .sidecar .warn { color: var(--s2); }
+  .sidecar .good { color: var(--s3); }
   .totals { margin-top: 6px; display: flex; flex-direction: column; gap: 0; max-width: 360px; }
   .totals div {
     display: flex; justify-content: space-between; gap: 18px;
@@ -507,24 +510,33 @@
         <h3>Chips, still open</h3>
         <span class="stamp" id="chips-stamp">nothing picked</span>
       </div>
-      <p><strong>A 500 chip case is a five colour product.</strong> The cheap ones split roughly
-      150 / 150 / 100 / 50 / 50 across white, red, blue, green and black. Getting 500 chips in
-      exactly two colours means buying single colour rolls instead, which costs two to three
-      times as much per chip: the cased set economics disappear and the case becomes a separate
-      purchase. So the real choice is take the mixed case and use the two colours you need, or
-      pay properly for the two you want.</p>
+      <p><strong>Two asks, and only one route satisfies both.</strong> A 500 chip case is a five
+      colour product, splitting roughly 150 / 150 / 100 / 50 / 50 across white, red, blue, green
+      and black, so two colours means single colour rolls at two to three times the price per
+      chip. And every one of those routes sells the same chips to anyone else who asks, so a
+      member can buy a matching stack off Amazon for &euro;30 and walk it in. Only a custom print
+      fixes that, because it stops being a product anyone can buy and becomes a 300 minimum
+      factory order with a three week lead.</p>
       <div class="ctl" style="margin:16px 0 2px">
         <span class="lbl" id="l-chips">Chip route</span>
         <div class="seg" role="group" aria-labelledby="l-chips">
           <button type="button" data-set="chips:0" aria-pressed="true">not yet</button>
           <button type="button" data-set="chips:1" aria-pressed="false">one Irish case</button>
           <button type="button" data-set="chips:2" aria-pressed="false">two Irish cases</button>
-          <button type="button" data-set="chips:3" aria-pressed="false">UK rolls, true 2 colour</button>
-          <button type="button" data-set="chips:4" aria-pressed="false">EU rolls, true 2 colour</button>
+          <button type="button" data-set="chips:3" aria-pressed="false">UK rolls</button>
+          <button type="button" data-set="chips:4" aria-pressed="false">EU rolls</button>
+          <button type="button" data-set="chips:5" aria-pressed="false">custom ceramic 500</button>
         </div>
       </div>
+      <p id="chips-copy">&nbsp;</p>
       <p id="chips-why">&nbsp;</p>
       <p class="muted-note" id="chips-note">&nbsp;</p>
+      <p class="muted-note"><strong>The control that costs nothing.</strong> Tournament directors
+      do not rely on the chip, they rely on the count. Chips in play are a fixed number: starting
+      stack times entrants, plus rebuys. Colour up early and often, count at every colour up, and
+      keep stacks in twenties so an odd one shows. That catches introduced chips whatever they
+      look like, and it is free. Custom chips raise the bar at the door; the count is what
+      actually closes it. Do the count either way.</p>
       <p class="muted-note"><strong>Rejected: China.</strong> A 500 chip cased set is roughly
       &euro;30 to &euro;45 of goods on Temu or AliExpress. At &euro;38 that lands at &euro;50.43 clean and
       &euro;57.38 if An Post collects, against &euro;55 on an Irish shelf that arrives sooner and can be
@@ -792,40 +804,51 @@
 
   var DEFAULTS = { sets: 12, cut: 4, cnPrice: 3.00, allin: true, risk: 0, ship: 0, chips: 0, checks: {} };
   var CHIPS = [
-    { stamp: "nothing picked", total: 0,
+    { stamp: "nothing picked", total: 0, copy: "",
       why: "Nothing added yet. Pick a route above and the project total follows it.",
       note: "" },
     { stamp: "Gadgetman.ie \u00b7 GLS", total: 55.00,
+      copy: "<span class=\"warn\">Copyable.</span> Stock commodity chips, on sale to anyone for &euro;30 to &euro;55.",
       why: "<strong>Gadgetman.ie, 500 chips at 11.5 g in an aluminium case, &euro;55 including VAT.</strong> " +
            "Irish seller, so no duty, no VAT to add, no An Post and a real returns route. Comes with a dealer " +
-           "chip, five dice and two decks. Five colours, not two, and that is the catch.",
+           "chip, five dice and two decks. Five colours, not two.",
       note: "Dispatch is within three working days by GLS and the delivery charge only appears in the basket, " +
-            "so this is not a Monday arrival and &euro;55 is not quite the final number. The colour split is not " +
-            "published either, so email customercare@gadgetman.ie before paying if the mix matters. " +
-            "MyGames.irish lists the same kind of set at &euro;69 plus &euro;25 delivery under a &euro;75 basket, which is worse." },
+            "so &euro;55 is not quite the final number. The colour split is not published: email " +
+            "customercare@gadgetman.ie before paying if the mix matters." },
     { stamp: "Gadgetman.ie \u00b7 two cases", total: 110.00,
+      copy: "<span class=\"warn\">Copyable.</span> Same commodity chips, twice as many.",
       why: "<strong>Two of the same case, 1000 chips, &euro;110.</strong> On a typical split that is about 300 " +
-           "white, 300 red, 200 blue and 100 each of green and black, so you finish with more depth in your two " +
-           "working denominations than either true two colour route gives you, plus a second case to carry them " +
-           "in. Still &euro;50 under the UK rolls and &euro;50 under the EU ones.",
-      note: "This is the pick if what you actually need is depth in two denominations across eight tables, " +
-            "rather than literally two colours in the box." },
+           "white, 300 red, 200 blue and 100 each of green and black, so more depth in your two working " +
+           "denominations than either plain two colour route gives you, plus a second carry case.",
+      note: "The cheapest way to get volume. Pair it with a strict chips in play count and it is defensible " +
+            "for a society that cannot justify the custom spend yet." },
     { stamp: "Amazon.co.uk \u00b7 import", total: 100.61,
+      copy: "<span class=\"warn\">Copyable.</span> Off the shelf, next day, to anyone.",
       why: "<strong>Five single colour 100 packs from Amazon.co.uk at about &pound;13.59 each.</strong> " +
            "&pound;67.95 is about &euro;78.80 at 1.16, plus &euro;3 duty, plus 23% VAT on both, giving " +
-           "<strong>&euro;100.61</strong>. Amazon pays the duty at checkout so there is no An Post ambush. " +
-           "Three to six days. No case included.",
-      note: "Unverified: whether those listings are genuinely single colour rather than mixed, and whether two " +
-            "colours count as one dutiable product type or two. If two, add &euro;3.69. Read the spec table, " +
-            "not the title." },
-    { stamp: "Poker Merchant \u00b7 EU", total: 159.95,
-      why: "<strong>Poker Merchant, loose chips at &euro;0.28 each, your own colours and denominations.</strong> " +
-           "500 chips is &euro;140 plus &euro;19.95 shipping to Ireland, so <strong>&euro;159.95</strong>. Clay " +
-           "composite, 11 g, 40 mm, three to six working days, inside the EU so no duty and no customs at all. " +
-           "The only route that delivers exactly what was asked for.",
-      note: "No case included, and a 500 chip aluminium case is another &euro;20 to &euro;30. Their free shipping to " +
-            "Ireland starts at &euro;300, which this does not reach. Note the 40 mm too: if the existing society " +
-            "chips are 39 mm, these will not stack cleanly beside them." }
+           "<strong>&euro;100.61</strong>. Amazon pays the duty at checkout. Three to six days. No case.",
+      note: "Unverified: whether those listings are genuinely single colour, and whether two colours count as " +
+            "one dutiable product type or two. If two, add &euro;3.69." },
+    { stamp: "Poker Merchant \u00b7 plain", total: 159.95,
+      copy: "<span class=\"warn\">Copyable.</span> A catalogue chip, orderable by anyone in three days.",
+      why: "<strong>Poker Merchant, loose plain chips at &euro;0.28 each, your own colours.</strong> " +
+           "500 is &euro;140 plus &euro;19.95 shipping to Ireland, so <strong>&euro;159.95</strong>. Clay composite, " +
+           "11 g, 40 mm, three to six working days, inside the EU so no duty at all.",
+      note: "Solves the two colour problem and nothing else. Note the 40 mm: if the existing society chips are " +
+            "39 mm these will not stack cleanly beside them." },
+    { stamp: "Poker Merchant \u00b7 custom", total: 495.00,
+      copy: "<span class=\"good\">Not copyable in practice.</span> Reproducing it means a 300 chip factory " +
+            "order, artwork that matches, and a three week wait, to steal a few euro.",
+      why: "<strong>Poker Merchant custom ceramic, full colour edge to edge print, your own artwork, " +
+           "denominations and colours.</strong> Casino grade ceramic, 10 g, 39.3 mm, minimum order 10, " +
+           "free setup and a designer check above 300, 10 to 15 working days from the Netherlands. " +
+           "Inside the EU so no duty, and free shipping above &euro;300. The only route that answers both the " +
+           "two colour ask and the uniqueness ask.",
+      note: "<strong>The price is the open question.</strong> The listing reads &euro;0.99 a chip with a " +
+            "&euro;0.32 figure also shown, which is a three times swing: &euro;495 against &euro;180 for 500. " +
+            "Their boxed custom ceramic 500 is listed near &dollar;932, which points at the higher number, so " +
+            "&euro;495 is the planning figure here. One quote email settles it. Lead time is the other catch: " +
+            "10 to 15 working days plus shipping is three to four weeks, so this cannot be a Monday order." }
   ];
 
   var state = JSON.parse(JSON.stringify(DEFAULTS));
@@ -1106,6 +1129,7 @@
     });
     var ch = CHIPS[state.chips] || CHIPS[0];
     document.getElementById("chips-stamp").textContent = ch.stamp;
+    document.getElementById("chips-copy").innerHTML = ch.copy || "&nbsp;";
     document.getElementById("chips-why").innerHTML = ch.why;
     document.getElementById("chips-note").innerHTML = ch.note || "&nbsp;";
     document.getElementById("t-chips").textContent = eur2.format(ch.total);
