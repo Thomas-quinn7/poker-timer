@@ -8,6 +8,24 @@ An interactive version of this, with a live basket, cost/time comparison and a
 pre-purchase checklist, is **[`kit-sourcing.html`](kit-sourcing.html)**. Open
 it in any browser.
 
+The same page also lives as a Claude artifact at
+**<https://claude.ai/artifact/E9LvqqVE2QWna55CbcAo6h>**, and that copy is the
+one to use day to day: the basket figures and the pre-purchase checkboxes save
+to the account rather than the browser, so ticking something off on one machine
+shows up on the other. The copy in this repo saves to whatever browser opens
+it, which does not travel.
+
+### Status
+
+| | |
+|---|---|
+| Buttons and cut cards, Temu | decided, not yet ordered |
+| Mats, Amazon.ie | decided, not yet ordered |
+
+Both still need the checkout checks at the bottom of this file. The one number
+outstanding is the real price of the 50 mm four-piece button set on Temu, which
+decides whether that order goes ahead or moves to Amazon UK.
+
 ---
 
 ## The order, as decided
