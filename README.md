@@ -7,7 +7,7 @@ Tools written while running one of Ireland's largest college poker societies.
 | Blind timer, desktop | [`Timer.py`](Timer.py) | Running a tournament clock with a full blind-structure editor |
 | Blind timer, browser | [`Timer_v2.html`](Timer_v2.html) | The one actually used at the table |
 | Blind structures | `poker_blinds*.jpeg` | Printed sheets the default levels come from |
-| Kit sourcing | [`KIT_SOURCING.md`](KIT_SOURCING.md) · [`kit-sourcing.html`](kit-sourcing.html) | Working out where to buy buttons and cut cards after the 2026 EU import rules |
+| Kit sourcing | [`KIT_SOURCING.md`](KIT_SOURCING.md) · [`kit-sourcing.html`](kit-sourcing.html) | Working out where to buy buttons, cut cards, mats and chips after the 2026 EU import rules |
 
 ## Tournament timer
 

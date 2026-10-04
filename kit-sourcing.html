@@ -4,8 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>
-  :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); color-scheme: light dark; }
-  html, body { margin: 0; }
+  :root { color-scheme: light dark;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px); }
+  body { margin: 0; font: 14px system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: #faf9f7; }
   img { max-width: 100%; }
   [hidden] { display: none !important; }
 </style>
@@ -497,11 +500,43 @@
       nine clear their &euro;300 free-shipping threshold at &euro;314.55, one more mat for &euro;117 less,
       in 3&ndash;4 working days. Passed over deliberately &mdash; the Newverest units have been handled
       and fit, and &euro;54 is under Newverest's own &dollar;69.97 site price.</p>
+    </div>
+
+    <div class="sidecar">
+      <div class="sidecar-head">
+        <h3>Chips, still open</h3>
+        <span class="stamp" id="chips-stamp">nothing picked</span>
+      </div>
+      <p><strong>A 500 chip case is a five colour product.</strong> The cheap ones split roughly
+      150 / 150 / 100 / 50 / 50 across white, red, blue, green and black. Getting 500 chips in
+      exactly two colours means buying single colour rolls instead, which costs two to three
+      times as much per chip: the cased set economics disappear and the case becomes a separate
+      purchase. So the real choice is take the mixed case and use the two colours you need, or
+      pay properly for the two you want.</p>
+      <div class="ctl" style="margin:16px 0 2px">
+        <span class="lbl" id="l-chips">Chip route</span>
+        <div class="seg" role="group" aria-labelledby="l-chips">
+          <button type="button" data-set="chips:0" aria-pressed="true">not yet</button>
+          <button type="button" data-set="chips:1" aria-pressed="false">one Irish case</button>
+          <button type="button" data-set="chips:2" aria-pressed="false">two Irish cases</button>
+          <button type="button" data-set="chips:3" aria-pressed="false">UK rolls, true 2 colour</button>
+          <button type="button" data-set="chips:4" aria-pressed="false">EU rolls, true 2 colour</button>
+        </div>
+      </div>
+      <p id="chips-why">&nbsp;</p>
+      <p class="muted-note" id="chips-note">&nbsp;</p>
+      <p class="muted-note"><strong>Rejected: China.</strong> A 500 chip cased set is roughly
+      &euro;30 to &euro;45 of goods on Temu or AliExpress. At &euro;38 that lands at &euro;50.43 clean and
+      &euro;57.38 if An Post collects, against &euro;55 on an Irish shelf that arrives sooner and can be
+      returned. 500 chips at 11.5 g is 5.75 kg, which is the weight band where free China shipping
+      stops being free. The China advantage only survives on light, low value, high markup items,
+      which is why it won on buttons and lost on mats. Chips behave like the mats.</p>
       <div class="totals">
         <div><span>Buttons and cut cards</span><b>&euro;70.36</b></div>
         <div><span>Mats</span><b>&euro;432.00</b></div>
-        <div class="grand"><span>Project total</span><b>&euro;502.36</b></div>
-        <div class="per"><span>Per playing surface</span><b>&euro;62.80</b></div>
+        <div><span>Chips</span><b id="t-chips">&euro;0.00</b></div>
+        <div class="grand"><span>Project total</span><b id="t-grand">&euro;502.36</b></div>
+        <div class="per"><span>Per playing surface</span><b id="t-per">&euro;62.80</b></div>
       </div>
     </div>
   </section>
@@ -755,7 +790,44 @@
     { id: "k7", t: "Ordered", s: "Placed before November, to dodge the incoming €2-per-parcel EU handling fee." }
   ];
 
-  var DEFAULTS = { sets: 12, cut: 4, cnPrice: 3.00, allin: true, risk: 0, ship: 0, checks: {} };
+  var DEFAULTS = { sets: 12, cut: 4, cnPrice: 3.00, allin: true, risk: 0, ship: 0, chips: 0, checks: {} };
+  var CHIPS = [
+    { stamp: "nothing picked", total: 0,
+      why: "Nothing added yet. Pick a route above and the project total follows it.",
+      note: "" },
+    { stamp: "Gadgetman.ie \u00b7 GLS", total: 55.00,
+      why: "<strong>Gadgetman.ie, 500 chips at 11.5 g in an aluminium case, &euro;55 including VAT.</strong> " +
+           "Irish seller, so no duty, no VAT to add, no An Post and a real returns route. Comes with a dealer " +
+           "chip, five dice and two decks. Five colours, not two, and that is the catch.",
+      note: "Dispatch is within three working days by GLS and the delivery charge only appears in the basket, " +
+            "so this is not a Monday arrival and &euro;55 is not quite the final number. The colour split is not " +
+            "published either, so email customercare@gadgetman.ie before paying if the mix matters. " +
+            "MyGames.irish lists the same kind of set at &euro;69 plus &euro;25 delivery under a &euro;75 basket, which is worse." },
+    { stamp: "Gadgetman.ie \u00b7 two cases", total: 110.00,
+      why: "<strong>Two of the same case, 1000 chips, &euro;110.</strong> On a typical split that is about 300 " +
+           "white, 300 red, 200 blue and 100 each of green and black, so you finish with more depth in your two " +
+           "working denominations than either true two colour route gives you, plus a second case to carry them " +
+           "in. Still &euro;50 under the UK rolls and &euro;50 under the EU ones.",
+      note: "This is the pick if what you actually need is depth in two denominations across eight tables, " +
+            "rather than literally two colours in the box." },
+    { stamp: "Amazon.co.uk \u00b7 import", total: 100.61,
+      why: "<strong>Five single colour 100 packs from Amazon.co.uk at about &pound;13.59 each.</strong> " +
+           "&pound;67.95 is about &euro;78.80 at 1.16, plus &euro;3 duty, plus 23% VAT on both, giving " +
+           "<strong>&euro;100.61</strong>. Amazon pays the duty at checkout so there is no An Post ambush. " +
+           "Three to six days. No case included.",
+      note: "Unverified: whether those listings are genuinely single colour rather than mixed, and whether two " +
+            "colours count as one dutiable product type or two. If two, add &euro;3.69. Read the spec table, " +
+            "not the title." },
+    { stamp: "Poker Merchant \u00b7 EU", total: 159.95,
+      why: "<strong>Poker Merchant, loose chips at &euro;0.28 each, your own colours and denominations.</strong> " +
+           "500 chips is &euro;140 plus &euro;19.95 shipping to Ireland, so <strong>&euro;159.95</strong>. Clay " +
+           "composite, 11 g, 40 mm, three to six working days, inside the EU so no duty and no customs at all. " +
+           "The only route that delivers exactly what was asked for.",
+      note: "No case included, and a 500 chip aluminium case is another &euro;20 to &euro;30. Their free shipping to " +
+            "Ireland starts at &euro;300, which this does not reach. Note the 40 mm too: if the existing society " +
+            "chips are 39 mm, these will not stack cleanly beside them." }
+  ];
+
   var state = JSON.parse(JSON.stringify(DEFAULTS));
 
   var eur  = new Intl.NumberFormat("en-IE", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
@@ -1032,6 +1104,14 @@
     CHECKS.forEach(function (c) {
       document.getElementById(c.id).checked = !!state.checks[c.id];
     });
+    var ch = CHIPS[state.chips] || CHIPS[0];
+    document.getElementById("chips-stamp").textContent = ch.stamp;
+    document.getElementById("chips-why").innerHTML = ch.why;
+    document.getElementById("chips-note").innerHTML = ch.note || "&nbsp;";
+    document.getElementById("t-chips").textContent = eur2.format(ch.total);
+    var grand = 70.36 + 432 + ch.total;
+    document.getElementById("t-grand").textContent = eur2.format(grand);
+    document.getElementById("t-per").textContent = eur2.format(grand / MATS);
     renderRows();
     renderScale();
   }
@@ -1072,7 +1152,7 @@
     dot.className = "dot " + (kind === "account" ? "ok" : "local");
     txt.textContent = kind === "account"
       ? "Saved in this browser"
-      : "Saved in this browser only";
+      : "Saved on this device only — sign in to carry it across";
   }
 
   function localSave() {

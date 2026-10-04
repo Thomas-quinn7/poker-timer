@@ -21,10 +21,12 @@ it, which does not travel.
 |---|---|
 | Buttons and cut cards, Temu | decided, not yet ordered |
 | Mats, Amazon.ie | decided, not yet ordered |
+| Chips, extra 500 | open, options priced below |
 
-Both still need the checkout checks at the bottom of this file. The one number
-outstanding is the real price of the 50 mm four-piece button set on Temu, which
-decides whether that order goes ahead or moves to Amazon UK.
+The first two still need the checkout checks at the bottom of this file. The one
+number outstanding there is the real price of the 50 mm four-piece button set on
+Temu, which decides whether that order goes ahead or moves to Amazon UK. Chips
+are a later addition and no route has been picked yet.
 
 ---
 
@@ -75,15 +77,61 @@ been handled and confirmed to fit the tables, they arrive Monday, and mats are
 the item where quality was the stated priority. €54 is also below Newverest's
 own site price of $69.97, so there is no reseller markup being paid.
 
+### Chips, an extra 500
+
+Asked for as "maybe 2 colour, 500 chips or so". That is worth saying plainly
+before the prices: **a 500-chip case is a five-colour product.** The cheap ones
+split roughly 150 / 150 / 100 / 50 / 50 across white, red, blue, green and
+black. Getting 500 chips in exactly two colours means buying single-colour
+rolls instead, and that costs two to three times as much per chip, because the
+cased-set economics go away and the case becomes a separate purchase.
+
+So the choice is really: take a mixed case and use the two colours you need, or
+pay properly for the two you want.
+
+| Route | What you get | Landed | Time |
+|---|---|---|---|
+| Gadgetman.ie, one case | 500 at 11.5 g, aluminium case, dealer chip, 5 dice, 2 decks, five colours | **€55** | 3 working days to dispatch, GLS |
+| Gadgetman.ie, two cases | 1000 chips, roughly 300 white / 300 red / 200 blue / 100 green / 100 black | **€110** | same |
+| Amazon.co.uk, 5 single-colour 100-packs | 500 in two colours, no case | **€100.61** | 3 to 6 days |
+| Poker Merchant, loose chips at €0.28 | 500 in any colours you like, 11 g clay composite, 40 mm, no case | **€159.95** | 3 to 6 working days |
+
+Amazon.co.uk working: £13.59 × 5 = £67.95, about €78.80 at 1.16, plus €3 duty,
+plus 23% VAT on both. Amazon pays the duty at checkout, so no An Post fee.
+Poker Merchant working: €0.28 × 500 = €140, plus €19.95 shipping to Ireland;
+their free shipping only starts at €300.
+
+**The recommendation is two Gadgetman cases at €110**, if what is actually
+needed is depth in two denominations across eight tables rather than literally
+two colours in the box. It delivers more of the two working colours than either
+true two-colour route, throws in a second carry case, and costs €50 less than
+the cheaper of them.
+
+**Rejected: China.** A 500-chip cased set is roughly €30 to €45 of goods on Temu
+or AliExpress. At €38 that lands at €50.43 clean and €57.38 if An Post collects,
+against €55 on an Irish shelf that arrives sooner and can be returned. 500 chips
+at 11.5 g is 5.75 kg, which is the weight band where free China shipping stops
+being free. The China advantage only survives on light, low-value, high-markup
+items, which is why it won on buttons and lost on mats. Chips behave like mats.
+
+**Open questions before paying.** Gadgetman does not publish the colour split
+and the delivery charge only appears in the basket, so €55 is not quite the
+final number; email customercare@gadgetman.ie first. If these are topping up an
+existing society set rather than standing alone, the new chips need to match the
+old ones on diameter (39 mm and 40 mm are both common) and design, or the mixed
+stacks will be hard to count across a table.
+
 ### Project total
 
 | | |
 |---|---|
 | Buttons and cut cards, Temu | €70.36 |
 | Mats, Amazon.ie | €432.00 |
-| **Total** | **€502.36** |
+| **Committed** | **€502.36** |
+| Chips, if two Gadgetman cases | €110.00 |
+| **With chips** | **€612.36** |
 
-€62.80 per playing surface, for eight surfaces fully kitted.
+€62.80 per playing surface as committed, €76.55 with the chips.
 
 ---
 
@@ -231,6 +279,10 @@ suppliers. The fix is buying spares, not buying better. Store them flat.
 - **Per category or per parcel?** Revenue says per distinct product type; at
   least one trade source reads it as per parcel. Revenue governs what you pay,
   so this model follows Revenue.
+- **The chip prices are listed prices, not basket prices.** Gadgetman's delivery
+  charge and the Amazon.co.uk single-colour claim are both unverified: the first
+  only shows at checkout, the second needs the spec table read rather than the
+  title. The sterling conversion uses 1.16 and will drift.
 - **The EU column is the least-evidenced.** Amazon.ie's catalogue is thin here
   and it is priced off a handful of listings. A cheaper Irish seller may exist.
 - **Prices drift**, Amazon's fastest of all.
@@ -247,3 +299,8 @@ suppliers. The fix is buying spares, not buying better. Store them flat.
 - [Amazon UK: 4-piece button set](https://www.amazon.co.uk/SGerste-Little-Dealer-Button-Holdem/dp/B08GPGDB7G)
 - [Amazon UK: poker-size cut cards](https://www.amazon.co.uk/SGerste-Poker-Cards-Blackjack-Casino/dp/B0871CMNCJ)
 - [Poker Merchant: all-in buttons](https://pokermerchant.com/collections/all-in-buttons)
+- [Gadgetman.ie: 500-piece poker set, €55](https://gadgetman.ie/home/3002-poker-set-500-piece-.html)
+- [MyGames.irish: 500-piece set, €69 plus delivery](https://mygames.irish/a-poker-chips-set)
+- [Poker Merchant: Ultimate chip, €0.28 each](https://pokermerchant.com/products/ultimate-poker-chip-100)
+- [Poker Merchant: shipping rates, €19.95 to Ireland](https://pokermerchant.com/pages/shipping)
+- [Amazon.co.uk: poker chips](https://www.amazon.co.uk/Poker-Chips/b?ie=UTF8&node=461148031)
