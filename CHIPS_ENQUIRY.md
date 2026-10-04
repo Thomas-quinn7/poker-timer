@@ -32,9 +32,8 @@ things I could not find on the site however, and I would be very grateful if
 you could help me with them.
 
 Could you tell me the weight, the material and the diameter of the High Roller
-chips? We play on table mats rather than full tables, so the feel and the
-weight of the chip matters quite a lot to us and I would like to be sure they
-are not too light before we order.
+chips? They will be handled very heavily across a season of tournaments and I
+would like to be sure they are not too light before we order.
 
 Could you also confirm that we are able to mix the rolls freely? We would like
 to choose our own denominations rather than take a standard set, so something
@@ -58,8 +57,6 @@ Thomas Quinn
 - The denominations are an example that comes to 20 rolls and 500 chips. Swap
   them for whatever suits the blind structure, keeping the odd colours at the
   top end, since those are the ones worth smuggling in.
-- The mats line is true and worth keeping. It is the reason chip weight matters
-  here, and it gives them something concrete to answer.
 
 ## What the answers decide
 
