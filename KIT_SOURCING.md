@@ -6,7 +6,36 @@ were already sorted. Priced 4 October 2026.
 
 An interactive version of this, with a live basket, cost/time comparison and a
 pre-purchase checklist, is **[`kit-sourcing.html`](kit-sourcing.html)**. Open
-it in any browser, or see it live if Pages is on for this repo.
+it in any browser.
+
+---
+
+## The order, as decided
+
+Temu, express shipping, one seller.
+
+| Line | Spec to match | Qty | Each | Goods |
+|---|---|---|---|---|
+| Acrylic button set, 4-piece (dealer, SB, BB, all-in) | 50 mm, acrylic, engraved both sides | 12 | €3.00 | €36.00 |
+| Cut cards, pack of 10 | 63-64 × 88 mm, 100% plastic | 4 | €3.80 | €15.20 |
+| | | | Goods | €51.20 |
+| | | | €3 duty × 2 product types | €6.00 |
+| | | | Irish VAT 23% | €13.16 |
+| | | | **Landed, clean clearance** | **€70.36** |
+
+€8.79 per mat, 3 to 8 days to Dublin. Delivers 12 dealer buttons, 12 all-in,
+12 small blind, 12 big blind and 40 cut cards, so eight mats are covered with
+four spare sets and 24 spare cut cards.
+
+Why those quantities: duty does not scale with units, so once the €3 per
+category is spent, every extra set costs only goods plus VAT. Twelve sets is
+eight in play and four spares, which covers a season of losses. Four packs of
+cut cards is 16 in play and 24 spare, which matters because cut cards are
+consumables and the cheap ones curl.
+
+**Stop rule at checkout.** If the button set prices above €4.00, the gap to
+Amazon UK closes to €2.51 on this basket and is no longer worth the wait. At
+that point buy the two Amazon SKUs in the sources below instead.
 
 ---
 

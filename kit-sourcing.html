@@ -149,6 +149,27 @@
   .sect-note { font-size: 13px; color: var(--ink-2); max-width: 46ch; }
 
   /* ---------- verdict ---------- */
+  .order {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--baize);
+    border-radius: 0 0 var(--r) var(--r);
+    padding: 20px 24px 18px;
+  }
+  .order-head {
+    display: flex; flex-wrap: wrap; align-items: baseline;
+    justify-content: space-between; gap: 6px 18px; margin-bottom: 14px;
+  }
+  .stamp {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--baize); font-weight: 500;
+  }
+  .order table { min-width: 460px; }
+  .order tr.tot td { border-top: 1px solid var(--rule); border-bottom: 0; font-size: 15px; padding-top: 12px; }
+  .order-foot { font-size: 13.5px; color: var(--ink-2); margin-top: 14px; max-width: 78ch; }
+  .order-foot strong { color: var(--ink); font-weight: 600; }
+
   .verdict {
     background: var(--surface);
     border: 1px solid var(--hairline);
@@ -402,6 +423,45 @@
     <p class="lede">Dealer buttons, all-in buttons and cut cards for eight playing surfaces, into Dublin. Cards and mats are already sorted. Since the EU dropped the &euro;150 duty-free threshold on 1 July 2026, the cheapest shelf price and the cheapest doorstep price are no longer the same thing.</p>
   </header>
 
+  <section class="order" aria-labelledby="h-order">
+    <div class="order-head">
+      <h2 id="h-order">The order, as decided</h2>
+      <span class="stamp">Temu &middot; express &middot; single seller</span>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr>
+          <th scope="col">Line</th><th scope="col">Spec to match</th>
+          <th scope="col" class="num">Qty</th><th scope="col" class="num">Each</th><th scope="col" class="num">Goods</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Acrylic button set, 4-piece</strong><br><small style="color:var(--ink-2)">dealer, small blind, big blind, all-in</small></td>
+            <td class="spec">50 mm &middot; acrylic &middot; engraved both sides</td>
+            <td class="num">12</td><td class="num">&euro;3.00</td><td class="num">&euro;36.00</td>
+          </tr>
+          <tr>
+            <td><strong>Cut cards, pack of 10</strong><br><small style="color:var(--ink-2)">one colour per mat, 8 mats</small></td>
+            <td class="spec">63&ndash;64 &times; 88 mm &middot; 100% plastic</td>
+            <td class="num">4</td><td class="num">&euro;3.80</td><td class="num">&euro;15.20</td>
+          </tr>
+          <tr><td colspan="4">Goods</td><td class="num">&euro;51.20</td></tr>
+          <tr><td colspan="4">&euro;3 duty &times; 2 product types</td><td class="num">&euro;6.00</td></tr>
+          <tr><td colspan="4">Irish VAT 23%, on goods and duty</td><td class="num">&euro;13.16</td></tr>
+          <tr class="tot"><td colspan="4"><strong>Landed, clean clearance</strong></td><td class="num"><strong>&euro;70.36</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="order-foot">
+      &euro;8.79 per mat, 3&ndash;8 days to Dublin. Delivers 12 dealer buttons, 12 all-in,
+      12 small blind, 12 big blind and 40 cut cards: eight mats covered with four spare
+      sets and 24 spare cut cards.
+      <strong>Stop rule:</strong> if the button set prices above &euro;4.00 at checkout, the gap
+      to Amazon.co.uk closes to &euro;2.51 and is no longer worth the wait. Set the price control
+      below to what the basket actually says.
+    </p>
+  </section>
+
   <div class="verdict">
     <p class="call" id="v-call">&nbsp;</p>
     <p class="why" id="v-why">&nbsp;</p>
@@ -412,7 +472,7 @@
       <span class="lbl" id="l-sets">Button sets</span>
       <div class="stepper" role="group" aria-labelledby="l-sets">
         <button type="button" data-step="sets:-1" aria-label="One fewer button set">&minus;</button>
-        <output id="o-sets">10</output>
+        <output id="o-sets">12</output>
         <button type="button" data-step="sets:1" aria-label="One more button set">+</button>
       </div>
     </div>
@@ -420,7 +480,7 @@
       <span class="lbl" id="l-cut">Cut cards &times;10</span>
       <div class="stepper" role="group" aria-labelledby="l-cut">
         <button type="button" data-step="cut:-1" aria-label="One fewer pack of cut cards">&minus;</button>
-        <output id="o-cut">2</output>
+        <output id="o-cut">4</output>
         <button type="button" data-step="cut:1" aria-label="One more pack of cut cards">+</button>
       </div>
     </div>
@@ -651,7 +711,7 @@
     { id: "k7", t: "Ordered", s: "Placed before November, to dodge the incoming €2-per-parcel EU handling fee." }
   ];
 
-  var DEFAULTS = { sets: 10, cut: 2, cnPrice: 3.00, allin: true, risk: 0, ship: 0, checks: {} };
+  var DEFAULTS = { sets: 12, cut: 4, cnPrice: 3.00, allin: true, risk: 0, ship: 0, checks: {} };
   var state = JSON.parse(JSON.stringify(DEFAULTS));
 
   var eur  = new Intl.NumberFormat("en-IE", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
