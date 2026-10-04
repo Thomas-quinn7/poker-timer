@@ -21,7 +21,7 @@ it, which does not travel.
 |---|---|
 | Buttons and cut cards, Temu | decided, not yet ordered |
 | Mats, Amazon.ie | decided, not yet ordered |
-| Chips, extra 500 | open, custom print needs a quote |
+| Chips, extra 500 | open, Lion Games rolls recommended |
 
 The first two still need the checkout checks at the bottom of this file. The one
 number outstanding there is the real price of the 50 mm four-piece button set on
@@ -79,96 +79,110 @@ own site price of $69.97, so there is no reseller markup being paid.
 
 ### Chips, an extra 500
 
-Two requirements, and only one route satisfies both.
+Two requirements: roughly two colours, and chips a member cannot casually
+match. The second one is what drives the answer.
 
-**First, a 500-chip case is a five-colour product.** The cheap ones split
-roughly 150 / 150 / 100 / 50 / 50 across white, red, blue, green and black.
-Getting 500 chips in exactly two colours means buying single-colour rolls, and
-that costs two to three times as much per chip because the cased-set economics
-go away and the case becomes a separate purchase.
+**Stop buying a set. Start buying colours.** A set is a SKU. It has a product
+page, and anyone who sees your chips can reorder the same one in three clicks
+for €30. A colour and denomination mix you chose yourself is not a product at
+all. The commodity case is white, red, blue, green and black. Build the
+tournament on purple 500s, pink 5000s, light blue 50s and yellow 1000s and
+there is no cheap Amazon case with a single matching chip in it.
 
-**Second, and more important, every stock chip is copyable.** The same sets are
-on sale to anyone. A member can buy a matching 500-chip case off Amazon for €30
-and walk chips into a tournament. Nothing in the price or the quality of a
-catalogue chip prevents that, because the attack does not need a forgery, it
-needs a purchase. The only thing that stops it is a chip that is not a product:
-a custom print, which turns copying into a 300-chip minimum factory order with
-matching artwork and a three-week lead, to steal a few euro.
+That also answers the two-colour ask for free, since you are picking every
+colour anyway. And the cost caps itself: **only the denominations worth
+stealing need to be odd.** Nobody smuggles in 25s. Make the top two
+denominations unbuyable and run generic chips underneath.
 
 | Route | Copyable? | What you get | Landed | Time |
 |---|---|---|---|---|
-| Gadgetman.ie, one case | yes | 500 at 11.5 g, aluminium case, dealer chip, 5 dice, 2 decks, five colours | **€55** | 3 working days to dispatch |
-| Gadgetman.ie, two cases | yes | 1000 chips, roughly 300 white / 300 red / 200 blue / 100 green / 100 black | **€110** | same |
-| Amazon.co.uk, 5 single-colour 100-packs | yes | 500 in two colours, no case | **€100.61** | 3 to 6 days |
-| Poker Merchant, plain loose chips at €0.28 | yes | 500 in any colours, 11 g clay composite, 40 mm, no case | **€159.95** | 3 to 6 working days |
-| **Poker Merchant, custom ceramic** | **no** | 500 in your own artwork, colours and denominations, 10 g ceramic, 39.3 mm | **€495** (see below) | 3 to 4 weeks |
+| Gadgetman.ie, one case | yes, for €30 | 500 at 11.5 g, aluminium case, five standard colours | **€55** | 3 working days to dispatch |
+| Gadgetman.ie, two cases | yes, for €30 | 1000 chips, same five colours | **€110** | same |
+| **Lion Games, 20 rolls of 25** | not casually | 500 in your own colours and denominations | **about €99** | PostNL, 3 days to ship |
+| **Poker Merchant, 500 single chips** | not casually | 500 clay composite, 11 g, 40 mm, your own colours | **€159.95** | 3 to 6 working days |
+| Poker Merchant, custom ceramic set 500 | no | full custom artwork, ceramic, case included | **€450** | 3 to 4 weeks |
 
-Amazon.co.uk working: £13.59 × 5 = £67.95, about €78.80 at 1.16, plus €3 duty,
-plus 23% VAT on both. Amazon pays the duty at checkout, so no An Post fee.
-Poker Merchant working: €0.28 × 500 = €140, plus €19.95 shipping to Ireland.
-Their free shipping starts at €300, so the custom order ships free.
+#### The recommendation: Lion Games, about €99
 
-#### The custom route
+[Lion Games](https://www.liongames.eu/chips/) sell chips in rolls of 25 at
+€3.95 a roll, which is €0.158 a chip. Twenty rolls is 500 chips for
+**€79**, plus roughly €20 shipping. Their High Roller line runs black 100,
+light blue 50, purple 500, yellow 1000 and pink 5000, none of which turn up in
+a commodity case. Netherlands based and shipping by PostNL, so inside the EU:
+no duty, no VAT to add, no An Post.
 
-[Poker Merchant custom ceramic](https://pokermerchant.com/products/custom-poker-chips):
-full-colour edge-to-edge printing, your own artwork, colours and denominations.
-Casino-grade ceramic, 10 g, 39.3 mm, 3.3 mm. Minimum order 10 chips, free setup
-and a designer check above 300. Ships from the Netherlands, so inside the EU:
-no duty, no VAT to add, no An Post. Production is 10 to 15 working days.
+This is the cheapest route that clears the bar, and it is €44 above the
+generic case rather than €395.
 
-This is the only route that answers both requirements at once, because custom
-means you choose the two colours as well.
+**Two unknowns, both worth one email to info@liongames.net before paying.**
+Shipping to Ireland is not published, so the €20 is an estimate. More
+importantly, neither chip weight nor material is published, and at €0.158 a
+chip these are likely light plastic rather than clay composite. Quality was a
+stated priority for the kit, so ask. They sell a 500-chip case separately.
 
-**The price is the open question, and the swing is large.** The listing shows
-€0.99 per chip and also a €0.32 figure, which is three times apart: €495 against
-€180 for 500. Their boxed custom ceramic 500 is listed near $932, which points
-at the higher number, so €495 is the planning figure used here. A single quote
-email settles it, and they answer on WhatsApp.
+**If the chips should feel like proper kit**, the same idea costs €159.95 at
+[Poker Merchant](https://pokermerchant.com/products/ultimate-poker-chip-100):
+single chips at €0.28, clay composite, 11 g, 40 mm, weight and material
+actually published, three to six working days. €60 more for a materially
+better chip. Confirm at checkout that colour is selectable, because the listing
+shows only one variant.
 
-**Lead time is the other catch.** 10 to 15 working days plus shipping is three
-to four weeks. This cannot be a Monday order, so it does not fit alongside the
-mats.
+#### The full custom ceiling, for reference
+
+The price question from the earlier pass is resolved: the €0.32 on the listing
+is a **sample** variant. The real figure is €0.99 a chip, and the boxed
+[Custom Ceramic Poker Set 500](https://pokermerchant.com/collections/custom-poker-chips)
+at **€450** is cheaper than 500 loose custom chips. Their 300 is €285 and
+their 1000 is €840. Full colour edge-to-edge print, ceramic, 10 g, 39.3 mm,
+case included, free setup, 10 to 15 working days plus shipping.
+
+Genuinely unmatchable, and over budget. Kept here as the ceiling.
 
 #### What costs nothing and catches the same fraud
 
 Tournament directors do not rely on the chip, they rely on the count. Chips in
 play are a fixed number: starting stack times entrants, plus rebuys. Colour up
-early and often, count at every colour-up, and keep stacks in twenties so an odd
-one shows. That detects introduced chips whatever they look like, and it is
-free. Custom chips raise the bar at the door; the count is what actually closes
-it. Worth doing either way, and it is the reason the €110 option stays
-defensible for a society that cannot justify €495 yet.
+early and often, count at every colour-up, and keep stacks in twenties so an
+odd one shows. That detects introduced chips whatever they look like, and it is
+free. Odd colours raise the bar at the door; the count is what closes it.
 
 #### Rejected
 
 **China, for chips.** A 500-chip cased set is roughly €30 to €45 of goods on
 Temu or AliExpress. At €38 that lands at €50.43 clean and €57.38 if An Post
-collects, against €55 on an Irish shelf that arrives sooner and can be returned.
-500 chips at 11.5 g is 5.75 kg, the weight band where free China shipping stops
-being free. The China advantage only survives on light, low-value, high-markup
-items, which is why it won on buttons and lost on mats. Chips behave like mats.
+collects, against €55 on an Irish shelf that arrives sooner and can be
+returned. 500 chips at 11.5 g is 5.75 kg, the weight band where free China
+shipping stops being free. The China advantage only survives on light,
+low-value, high-markup items, which is why it won on buttons and lost on mats.
 
-**DIY inlay labels on cheap chips.** Vinyl inlay stickers are about $0.17 to
-$0.75 each with a $75 setup, mostly from US suppliers, so duty and VAT apply on
-top. They also only work on blank inlay-ready chips with a recessed face: stuck
-onto the suited or dice-mould chips in a cheap case they sit proud and peel. Add
-500 to 1000 labels to apply by hand and it is neither cheaper nor better than
-the factory print.
+**Amazon.co.uk single-colour 100-packs.** About £13.59 each, so five packs is
+£67.95, about €78.80 at 1.16, plus €3 duty and 23% VAT on both: €100.61.
+Same money as Lion Games, for standard colours and a worse spread of
+denominations.
 
-**DIY UV marker pen.** Casinos do use UV, but as a manufacturer spec in the
-chip, not as ink added afterwards. Hand-applied UV wears off unevenly and gives
-false confidence. If UV matters, ask for it on the custom order.
+**A named specialist set.** Poker Merchant's branded 500 sets start at €169.95
+and their 300s at €79.95. Distinctive looking, but still a SKU with a product
+page, so it fails the actual test while costing more than the rolls.
+
+**DIY inlay labels.** Vinyl inlay stickers run $0.17 to $0.75 each with a $75
+setup, mostly US suppliers so duty and VAT apply. They only work on blank
+inlay-ready chips with a recessed face: stuck onto suited or dice-mould chips
+they sit proud and peel. Add 500 labels to apply by hand and it is neither
+cheaper nor better.
+
+**DIY UV marker pen.** Casinos use UV as a manufacturer spec inside the chip,
+not as ink added afterwards. Hand-applied UV wears unevenly and gives false
+confidence. If UV matters, ask for it on a custom order.
 
 #### Open questions before paying
 
-- Email Poker Merchant for a firm per-chip quote at 500 and at 1000. That one
-  answer decides whether this is a €180 purchase or a €495 one.
-- Gadgetman does not publish the colour split and the delivery charge only
-  appears in the basket, so €55 is not quite the final number.
-- If these top up an existing society set rather than standing alone, the new
-  chips must match on diameter (39 mm and 40 mm are both common) and design, or
-  mixed stacks get hard to count across a table. The custom ceramic is 39.3 mm.
-  Measure an existing chip first.
+- Email info@liongames.net for the shipping cost to Ireland and, more
+  importantly, the chip weight and material. That decides between the €99 and
+  the €159.95 route.
+- Pick the denominations before ordering rolls. Odd top end, generic bottom
+  end is the cheap version of this.
+- If these top up an existing society set, the new chips must match on diameter
+  (39 mm and 40 mm are both common). Measure an existing chip first.
 
 ### Project total
 
@@ -177,11 +191,10 @@ false confidence. If UV matters, ask for it on the custom order.
 | Buttons and cut cards, Temu | €70.36 |
 | Mats, Amazon.ie | €432.00 |
 | **Committed** | **€502.36** |
-| Chips, two Gadgetman cases | €110.00 |
-| Chips, 500 custom ceramic instead | €495.00 |
+| Chips, Lion Games rolls | €99.00 |
+| **With chips** | **€601.36** |
 
-€62.80 per playing surface as committed. €76.55 with the cheap chips, €124.67
-with the custom ones.
+€62.80 per playing surface as committed, €75.17 with the chips.
 
 ---
 
@@ -329,9 +342,10 @@ suppliers. The fix is buying spares, not buying better. Store them flat.
 - **Per category or per parcel?** Revenue says per distinct product type; at
   least one trade source reads it as per parcel. Revenue governs what you pay,
   so this model follows Revenue.
-- **The custom chip price is a three-times range, not a figure.** The listing
-  shows both €0.99 and €0.32 a chip. €495 is used here because their boxed
-  custom 500 is near $932, but that is an inference, not a quote.
+- **Lion Games is the least-evidenced recommendation on this page.** The price
+  per roll is solid, but shipping to Ireland is estimated and neither chip
+  weight nor material is published. At €0.158 a chip they are probably light
+  plastic. One email settles it, and it could move the answer to Poker Merchant.
 - **The chip prices are listed prices, not basket prices.** Gadgetman's delivery
   charge and the Amazon.co.uk single-colour claim are both unverified: the first
   only shows at checkout, the second needs the spec table read rather than the
@@ -357,6 +371,8 @@ suppliers. The fix is buying spares, not buying better. Store them flat.
 - [Poker Merchant: Ultimate chip, €0.28 each](https://pokermerchant.com/products/ultimate-poker-chip-100)
 - [Poker Merchant: shipping rates, €19.95 to Ireland](https://pokermerchant.com/pages/shipping)
 - [Amazon.co.uk: poker chips](https://www.amazon.co.uk/Poker-Chips/b?ie=UTF8&node=461148031)
+- [Lion Games: chips by the roll](https://www.liongames.eu/chips/)
+- [Poker Merchant: single chip, €0.28](https://pokermerchant.com/products/ultimate-poker-chip-100)
 - [Poker Merchant: custom poker chips](https://pokermerchant.com/products/custom-poker-chips)
 - [Poker Merchant: custom chip range](https://pokermerchant.com/collections/custom-poker-chips)
 - [American Gaming Supply: custom inlay labels](https://www.americangamingsupply.com/custompokerchipslabels.aspx)
