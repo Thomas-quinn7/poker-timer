@@ -21,7 +21,7 @@ it, which does not travel.
 |---|---|
 | Buttons and cut cards, Temu | decided, not yet ordered |
 | Mats, Amazon.ie | decided, not yet ordered |
-| Chips, extra 500 | open, Lion Games rolls recommended |
+| Chips, extra 500 | open, Lion Games rolls recommended, enquiry drafted |
 
 The first two still need the checkout checks at the bottom of this file. The one
 number outstanding there is the real price of the 50 mm four-piece button set on
@@ -178,7 +178,9 @@ confidence. If UV matters, ask for it on a custom order.
 
 - Email info@liongames.net for the shipping cost to Ireland and, more
   importantly, the chip weight and material. That decides between the €99 and
-  the €159.95 route.
+  the €159.95 route. **The draft is written and sitting in
+  [`CHIPS_ENQUIRY.md`](CHIPS_ENQUIRY.md)**, along with a table of what each
+  possible answer decides.
 - Pick the denominations before ordering rolls. Odd top end, generic bottom
   end is the cheap version of this.
 - If these top up an existing society set, the new chips must match on diameter

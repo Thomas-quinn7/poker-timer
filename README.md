@@ -8,6 +8,7 @@ Tools written while running one of Ireland's largest college poker societies.
 | Blind timer, browser | [`Timer_v2.html`](Timer_v2.html) | The one actually used at the table |
 | Blind structures | `poker_blinds*.jpeg` | Printed sheets the default levels come from |
 | Kit sourcing | [`KIT_SOURCING.md`](KIT_SOURCING.md) · [`kit-sourcing.html`](kit-sourcing.html) | Working out where to buy buttons, cut cards, mats and chips after the 2026 EU import rules |
+| Supplier enquiry | [`CHIPS_ENQUIRY.md`](CHIPS_ENQUIRY.md) | Draft email to the chip supplier, and what each possible answer decides |
 
 ## Tournament timer
 
@@ -53,17 +54,25 @@ everything recalculates, which matters because the unit price is what decides
 the whole thing. It also carries the pre-purchase checklist. Open the file in
 any browser, no server needed.
 
-The short version, if you only want the one number: the breakeven on a 50 mm
-four-piece button set is around 3.50 euro. Below that, buy from China. Above
-it, Amazon UK is the same money and arrives in a third of the time.
+The short version, if you only want the headlines: the breakeven on a 50 mm
+four-piece button set is around 3.50 euro, so below that buy from China and
+above it Amazon UK is the same money in a third of the time. Mats and chips
+both go the other way, because weight and value kill the import saving. And
+for chips that a member cannot casually match, the trick is to stop buying a
+set and buy a colour mix instead, which costs about 99 euro rather than the
+450 euro a full custom print would.
+
+[`CHIPS_ENQUIRY.md`](CHIPS_ENQUIRY.md) is the draft email to the chip
+supplier, with the two unknowns it is chasing and a table of what each answer
+would mean.
 
 ## Picking this up on another machine
 
 Two separate things live in two separate places, and only one of them is here.
 
 **In this repo**, so a `git pull` gets it: the research, the decisions and the
-reasoning behind them, plus the offline copy of the page. That is
-`KIT_SOURCING.md` and `kit-sourcing.html`.
+reasoning behind them, the draft supplier email, plus the offline copy of the
+page. That is `KIT_SOURCING.md`, `CHIPS_ENQUIRY.md` and `kit-sourcing.html`.
 
 **In the Claude account**, not in the repo: the live basket figures and which
 pre-purchase boxes have been ticked. Those are at
