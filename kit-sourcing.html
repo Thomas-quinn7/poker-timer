@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+  :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); color-scheme: light dark; }
+  html, body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<title>Eight Mats, Three Routes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600;6..96,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+
+<style>
+  :root {
+    --page:         #f1f4f1;
+    --surface:      #fcfcfb;
+    --sunk:         #e8ece8;
+    --ink:          #121614;
+    --ink-2:        #52574f;
+    --muted:        #878c82;
+    --hairline:     #dfe4de;
+    --rule:         #c7cdc5;
+
+    --accent:       #9e2b35;
+    --accent-soft:  #f5e6e7;
+    --baize:        #2e5f4f;
+
+    --s1: #2a78d6;
+    --s2: #eb6834;
+    --s3: #1baf7a;
+    --s4: #eda100;
+
+    --grid:     #e1e0d9;
+    --baseline: #c3c2b7;
+
+    --r: 5px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --page:        #0b0e0c;
+      --surface:     #1a1a19;
+      --sunk:        #131614;
+      --ink:         #f2f5f1;
+      --ink-2:       #bfc4ba;
+      --muted:       #898781;
+      --hairline:    #2a2e29;
+      --rule:        #3b413a;
+      --accent:      #d4707a;
+      --accent-soft: #2b1a1c;
+      --baize:       #6fae98;
+      --s1: #3987e5;
+      --s2: #d95926;
+      --s3: #199e70;
+      --s4: #c98500;
+      --grid:     #2c2c2a;
+      --baseline: #383835;
+    }
+  }
+  :root[data-theme="dark"] {
+    --page:        #0b0e0c;
+    --surface:     #1a1a19;
+    --sunk:        #131614;
+    --ink:         #f2f5f1;
+    --ink-2:       #bfc4ba;
+    --muted:       #898781;
+    --hairline:    #2a2e29;
+    --rule:        #3b413a;
+    --accent:      #d4707a;
+    --accent-soft: #2b1a1c;
+    --baize:       #6fae98;
+    --s1: #3987e5;
+    --s2: #d95926;
+    --s3: #199e70;
+    --s4: #c98500;
+    --grid:     #2c2c2a;
+    --baseline: #383835;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 38px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  h1 {
+    font-family: "Bodoni Moda", Didot, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: clamp(32px, 6vw, 52px);
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  h2 {
+    font-family: "Bodoni Moda", Didot, serif;
+    font-weight: 700;
+    font-size: clamp(20px, 2.8vw, 26px);
+    line-height: 1.15;
+    margin: 0;
+    text-wrap: balance;
+  }
+  h3 {
+    font-family: "Bodoni Moda", Didot, serif;
+    font-weight: 600;
+    font-size: 17px;
+    margin: 0;
+  }
+  p { margin: 0; }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 12px;
+  }
+  .lede { font-size: 16.5px; color: var(--ink-2); max-width: 64ch; }
+
+  .sect-head {
+    display: flex; flex-wrap: wrap;
+    align-items: baseline; justify-content: space-between;
+    gap: 8px 20px;
+    margin-bottom: 16px;
+    padding-bottom: 11px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .sect-note { font-size: 13px; color: var(--ink-2); max-width: 46ch; }
+
+  /* ---------- verdict ---------- */
+  .verdict {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--r) var(--r) 0;
+    padding: 22px 26px;
+    display: flex; flex-direction: column; gap: 9px;
+  }
+  .verdict .call {
+    font-family: "Bodoni Moda", Didot, serif;
+    font-size: clamp(20px, 3.2vw, 27px);
+    font-weight: 700;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+  .verdict .why { font-size: 14.5px; color: var(--ink-2); max-width: 72ch; }
+  .verdict .why strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- controls ---------- */
+  .controls {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r);
+    padding: 18px 20px;
+    display: flex; flex-wrap: wrap;
+    gap: 22px 32px; align-items: flex-end;
+  }
+  .ctl { display: flex; flex-direction: column; gap: 7px; }
+  .ctl .lbl {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10.5px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .ctl .lbl em { font-style: normal; color: var(--accent); }
+
+  .stepper { display: inline-flex; border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; background: var(--page); }
+  .stepper button {
+    appearance: none; border: 0; background: transparent; color: var(--ink-2);
+    font: inherit; font-size: 17px; line-height: 1; width: 36px; cursor: pointer;
+    transition: background 120ms ease;
+  }
+  .stepper button:hover { background: var(--sunk); color: var(--ink); }
+  .stepper output {
+    min-width: 58px; padding: 8px 4px; text-align: center;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums;
+    border-inline: 1px solid var(--rule); background: var(--surface);
+  }
+
+  .seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; background: var(--page); }
+  .seg button {
+    appearance: none; border: 0; border-right: 1px solid var(--rule);
+    background: transparent; color: var(--ink-2); font: inherit; font-size: 12.5px;
+    padding: 8px 13px; cursor: pointer; white-space: nowrap;
+    transition: background 120ms ease;
+  }
+  .seg button:last-child { border-right: 0; }
+  .seg button:hover { background: var(--sunk); }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: #fff; font-weight: 600; }
+
+  .switch { display: inline-flex; align-items: center; gap: 9px; cursor: pointer; font-size: 13.5px; user-select: none; }
+  .switch input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .switch .track { width: 40px; height: 23px; border-radius: 12px; background: var(--rule); position: relative; transition: background 140ms ease; flex: none; }
+  .switch .track::after { content: ""; position: absolute; top: 3px; left: 3px; width: 17px; height: 17px; border-radius: 50%; background: var(--surface); transition: transform 140ms ease; }
+  .switch input:checked + .track { background: var(--baize); }
+  .switch input:checked + .track::after { transform: translateX(17px); }
+  .switch input:focus-visible + .track { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  /* ---------- the comparison grid ---------- */
+  .cmp { background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--r); overflow: hidden; }
+  .cmp-head, .cmp-row, .cmp-foot {
+    display: grid;
+    grid-template-columns: minmax(150px, 1.05fr) minmax(0, 2fr) 92px minmax(0, 1.25fr) 78px;
+    gap: 18px;
+    align-items: center;
+    padding: 0 20px;
+  }
+  .cmp-head {
+    padding-block: 11px;
+    border-bottom: 1px solid var(--rule);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+  }
+  .cmp-head .r { text-align: right; }
+  .cmp-row { padding-block: 16px; border-bottom: 1px solid var(--hairline); }
+  .cmp-row:last-of-type { border-bottom: 0; }
+  .cmp-row.pick { background: var(--accent-soft); }
+
+  .rname { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+  .rname b { font-family: "Bodoni Moda", Didot, serif; font-size: 17.5px; font-weight: 700; line-height: 1.2; }
+  .rname span {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted);
+  }
+  .rname .pickmark { color: var(--accent); font-weight: 600; letter-spacing: 0.06em; }
+
+  .bar { display: flex; gap: 2px; height: 26px; }
+  .bar .f { min-width: 2px; position: relative; }
+  .bar .f:first-child { border-radius: 3px 0 0 3px; }
+  .bar .f.tail { border-radius: 0 3px 3px 0; }
+  .bar .f.only { border-radius: 3px; }
+  .bar .f .il {
+    position: absolute; inset: 0; display: grid; place-items: center;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10.5px; font-weight: 600; color: #fff; pointer-events: none;
+  }
+
+  .track { position: relative; height: 26px; background: var(--sunk); border-radius: 3px; }
+  .track .g { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--grid); }
+  .track .f { position: absolute; top: 0; bottom: 0; background: var(--s1); border-radius: 3px; }
+
+  .big {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 20px; font-weight: 600; letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums; text-align: right; display: block; line-height: 1.2;
+  }
+  .sm { font-size: 10.5px; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; display: block; }
+
+  .cmp-foot { padding-block: 9px 14px; }
+  .axis { position: relative; height: 16px; border-top: 1px solid var(--baseline); }
+  .axis span {
+    position: absolute; top: 4px; transform: translateX(-50%);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10px; color: var(--muted); white-space: nowrap;
+  }
+  .axis span.l0 { transform: none; left: 0; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 7px 20px; margin-top: 14px; align-items: center; }
+  .legend-item { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--ink-2); }
+  .sw { width: 10px; height: 10px; border-radius: 2px; flex: none; }
+  .legend .sp { flex: 1 1 auto; }
+
+  .linkish {
+    appearance: none; background: none; border: 0; padding: 0; font: inherit; font-size: 12.5px;
+    color: var(--accent); cursor: pointer; text-decoration: underline;
+    text-underline-offset: 3px; text-decoration-thickness: 1px;
+  }
+
+  /* ---------- tables ---------- */
+  .tw { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 560px; }
+  th, td { padding: 11px 16px 11px 0; text-align: left; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+  th { font-weight: 600; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--rule); }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; font-family: "IBM Plex Mono", ui-monospace, monospace; padding-right: 0; }
+  tbody tr:last-child td { border-bottom: 0; }
+  td.spec { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12.5px; }
+  .trap { color: var(--accent); font-weight: 500; }
+
+  .card { background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--r); padding: 20px 22px; }
+
+  /* ---------- checklist ---------- */
+  .checks { display: flex; flex-direction: column; gap: 0; }
+  .check {
+    display: flex; gap: 13px; align-items: flex-start;
+    padding: 13px 0; border-bottom: 1px solid var(--hairline); cursor: pointer;
+  }
+  .check:last-child { border-bottom: 0; }
+  .check input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .check .box {
+    width: 19px; height: 19px; border: 1.5px solid var(--rule); border-radius: 3px;
+    flex: none; margin-top: 1px; display: grid; place-items: center;
+    transition: background 120ms ease, border-color 120ms ease;
+  }
+  .check .box::after {
+    content: ""; width: 10px; height: 5.5px;
+    border-left: 2px solid var(--surface); border-bottom: 2px solid var(--surface);
+    transform: rotate(-45deg) translate(1px, -1px) scale(0);
+    transition: transform 140ms ease;
+  }
+  .check input:checked + .box { background: var(--baize); border-color: var(--baize); }
+  .check input:checked + .box::after { transform: rotate(-45deg) translate(1px, -1px) scale(1); }
+  .check input:focus-visible + .box { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .check .txt { font-size: 14px; }
+  .check .txt small { display: block; color: var(--ink-2); font-size: 12.5px; margin-top: 1px; }
+  .check input:checked ~ .txt { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--rule); }
+  .check input:checked ~ .txt small { text-decoration: none; }
+
+  /* ---------- svg ---------- */
+  .chartcard svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .ax-label { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; fill: var(--muted); }
+  .ax-title { font-family: "IBM Plex Sans", system-ui, sans-serif; font-size: 11.5px; fill: var(--ink-2); }
+  .series-label { font-family: "IBM Plex Sans", system-ui, sans-serif; font-size: 12px; font-weight: 600; }
+
+  /* ---------- notes ---------- */
+  .notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(258px, 1fr)); gap: 26px 38px; }
+  .note h4 {
+    font-size: 11px; font-family: "IBM Plex Mono", ui-monospace, monospace;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+    margin: 0 0 9px; font-weight: 500;
+  }
+  .note p, .note li { font-size: 13px; color: var(--ink-2); }
+  .note ul { margin: 0; padding-left: 16px; display: flex; flex-direction: column; gap: 6px; }
+  .note a { color: var(--accent); text-underline-offset: 2px; }
+
+  /* ---------- save state ---------- */
+  .saveline {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted);
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--rule); flex: none; }
+  .dot.ok { background: var(--baize); }
+  .dot.local { background: var(--s4); }
+
+  footer {
+    border-top: 1px solid var(--rule); padding-top: 16px;
+    font-size: 11.5px; color: var(--muted);
+    display: flex; flex-wrap: wrap; gap: 6px 20px; justify-content: space-between;
+  }
+
+  #tip {
+    position: fixed; z-index: 50; pointer-events: none;
+    background: var(--ink); color: var(--page);
+    border-radius: 3px; padding: 7px 10px;
+    font-size: 12px; line-height: 1.45; font-variant-numeric: tabular-nums;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.22); max-width: 230px;
+  }
+  #tip[hidden] { display: none !important; }
+
+  @media (max-width: 860px) {
+    .cmp-head { display: none; }
+    .cmp-row, .cmp-foot {
+      grid-template-columns: 1fr 78px;
+      gap: 10px 14px;
+      padding-block: 18px;
+    }
+    .cmp-row .barwrap, .cmp-row .trackwrap { grid-column: 1 / -1; }
+    .cmp-row .big, .cmp-row .sm { text-align: right; }
+    .cmp-row .cost-cell { grid-column: 2; grid-row: 1; }
+    .cmp-foot { display: none; }
+    .mlabel { display: block; }
+  }
+  .mlabel {
+    display: none;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) { * { transition-duration: 0.01ms !important; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <p class="eyebrow">Poker kit sourcing &middot; priced 4 October 2026</p>
+    <h1>Eight mats, three routes</h1>
+    <p class="lede">Dealer buttons, all-in buttons and cut cards for eight playing surfaces, into Dublin. Cards and mats are already sorted. Since the EU dropped the &euro;150 duty-free threshold on 1 July 2026, the cheapest shelf price and the cheapest doorstep price are no longer the same thing.</p>
+  </header>
+
+  <div class="verdict">
+    <p class="call" id="v-call">&nbsp;</p>
+    <p class="why" id="v-why">&nbsp;</p>
+  </div>
+
+  <section class="controls" aria-label="Basket">
+    <div class="ctl">
+      <span class="lbl" id="l-sets">Button sets</span>
+      <div class="stepper" role="group" aria-labelledby="l-sets">
+        <button type="button" data-step="sets:-1" aria-label="One fewer button set">&minus;</button>
+        <output id="o-sets">10</output>
+        <button type="button" data-step="sets:1" aria-label="One more button set">+</button>
+      </div>
+    </div>
+    <div class="ctl">
+      <span class="lbl" id="l-cut">Cut cards &times;10</span>
+      <div class="stepper" role="group" aria-labelledby="l-cut">
+        <button type="button" data-step="cut:-1" aria-label="One fewer pack of cut cards">&minus;</button>
+        <output id="o-cut">2</output>
+        <button type="button" data-step="cut:1" aria-label="One more pack of cut cards">+</button>
+      </div>
+    </div>
+    <div class="ctl">
+      <span class="lbl">China set price <em>&larr; verify</em></span>
+      <div class="stepper" role="group" aria-label="China unit price">
+        <button type="button" data-step="cnPrice:-0.25" aria-label="Lower the China unit price">&minus;</button>
+        <output id="o-price">&euro;3.00</output>
+        <button type="button" data-step="cnPrice:0.25" aria-label="Raise the China unit price">+</button>
+      </div>
+    </div>
+    <div class="ctl">
+      <span class="lbl">All-in buttons</span>
+      <label class="switch">
+        <input type="checkbox" id="c-allin" checked>
+        <span class="track"></span><span id="t-allin">Included</span>
+      </label>
+    </div>
+    <div class="ctl">
+      <span class="lbl" id="l-risk">If the China parcel&hellip;</span>
+      <div class="seg" role="group" aria-labelledby="l-risk">
+        <button type="button" data-set="risk:0" aria-pressed="true">clears clean</button>
+        <button type="button" data-set="risk:1" aria-pressed="false">draws the An Post fee</button>
+        <button type="button" data-set="risk:2" aria-pressed="false">splits in two</button>
+      </div>
+    </div>
+    <div class="ctl">
+      <span class="lbl" id="l-ship">China shipping</span>
+      <div class="seg" role="group" aria-labelledby="l-ship">
+        <button type="button" data-set="ship:0" aria-pressed="true">Temu express</button>
+        <button type="button" data-set="ship:1" aria-pressed="false">AliExpress Choice</button>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-cmp">
+    <div class="sect-head">
+      <h2 id="h-cmp">Cost and time, side by side</h2>
+      <p class="sect-note">Landed cost is goods plus the &euro;3-per-product-type duty, plus 23% Irish VAT on both, plus An Post&rsquo;s &euro;6.95 when nobody paid the duty at checkout.</p>
+    </div>
+
+    <div class="cmp">
+      <div class="cmp-head">
+        <span>Route</span><span>Landed cost</span><span class="r">Total</span><span>Days to the door</span><span class="r">Window</span>
+      </div>
+      <div id="rows"></div>
+      <div class="cmp-foot">
+        <span></span>
+        <div class="axis" id="axis-cost"></div>
+        <span></span>
+        <div class="axis" id="axis-days"></div>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="legend">
+      <span class="legend-item"><span class="sw" style="background:var(--s1)"></span>Goods</span>
+      <span class="legend-item"><span class="sw" style="background:var(--s2)"></span>&euro;3 duty per product type</span>
+      <span class="legend-item"><span class="sw" style="background:var(--s3)"></span>Irish VAT 23%</span>
+      <span class="legend-item"><span class="sw" style="background:var(--s4)"></span>An Post handling</span>
+      <span class="sp"></span>
+      <button type="button" class="linkish" id="tt" aria-expanded="false" aria-controls="ct">Show as a table</button>
+    </div>
+
+    <div class="tw" id="ct" hidden style="margin-top:16px">
+      <table>
+        <thead><tr>
+          <th scope="col">Route</th><th scope="col" class="num">Goods</th><th scope="col" class="num">Duty</th>
+          <th scope="col" class="num">VAT</th><th scope="col" class="num">Handling</th>
+          <th scope="col" class="num">Landed</th><th scope="col" class="num">Per mat</th>
+        </tr></thead>
+        <tbody id="ctb"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-list">
+    <div class="sect-head">
+      <h2 id="h-list">The shopping list</h2>
+      <p class="sect-note">Two product types, which is the whole point &mdash; a third adds &euro;3 of duty before it adds anything useful.</p>
+    </div>
+    <div class="card tw">
+      <table>
+        <thead><tr>
+          <th scope="col">Item</th><th scope="col">Insist on</th>
+          <th scope="col" class="num">Qty</th><th scope="col" class="num">Each</th>
+          <th scope="col">What goes wrong</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>4-piece acrylic button set</strong><br><small style="color:var(--ink-2)">dealer, small blind, big blind, all-in</small></td>
+            <td class="spec">50 mm diameter<br>acrylic, not plastic<br>engraved, double-sided</td>
+            <td class="num">10</td>
+            <td class="num">&euro;2.50&ndash;4.00</td>
+            <td><span class="trap">30 mm sets.</span> The cheap listings that flood the search results are chip-sized discs with &ldquo;DEALER&rdquo; printed on them. Read the spec table, not the title.</td>
+          </tr>
+          <tr>
+            <td><strong>Cut cards, pack of 10</strong><br><small style="color:var(--ink-2)">100% plastic</small></td>
+            <td class="spec">63&ndash;64 &times; 88 mm<br>poker size, not bridge</td>
+            <td class="num">2</td>
+            <td class="num">&euro;3.00&ndash;5.00</td>
+            <td><span class="trap">Bridge size sold as poker.</span> At 57 mm it is 6 mm narrower than your decks and leaves the bottom card showing at both edges. Separately: cheap ones curl, so buy spares rather than better.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="notes" style="margin-top:26px">
+      <div class="note">
+        <h4>Buttons &mdash; the honest version</h4>
+        <p>A 50 mm acrylic button at this price is 3&ndash;6 mm thick and weighs 10&ndash;15 g, against a 20&ndash;45 g comfort band. Light. On a <em>mat</em> that matters much less than on a bare table, which is the setup here. Ceramic at ~&euro;6.20 a set feels better and is the only upgrade worth considering.</p>
+      </div>
+      <div class="note">
+        <h4>Not worth ordering from China</h4>
+        <ul>
+          <li>A dealer button with a built-in timer &mdash; most likely item to arrive dead, no realistic warranty route.</li>
+          <li>Anything to reach a shipping threshold. There isn&rsquo;t one.</li>
+          <li>A third product category. A &euro;4 discard tray costs &euro;7 once duty lands. Add more of what you&rsquo;re already buying instead.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-check">
+    <div class="sect-head">
+      <h2 id="h-check">Before you pay</h2>
+      <p class="sect-note" id="savenote"><span class="saveline"><span class="dot" id="savedot"></span><span id="savetxt">Checking where this saves&hellip;</span></span></p>
+    </div>
+    <div class="card">
+      <div class="checks" id="checks"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-scale">
+    <div class="sect-head">
+      <h2 id="h-scale">Why a bigger order is a cheaper order</h2>
+      <p class="sect-note">Duty is charged once per <em>product type</em>, not per unit. Ten button sets pay the same &euro;3 as one.</p>
+    </div>
+    <div class="card chartcard">
+      <svg id="sc" viewBox="0 0 760 330" role="img" aria-labelledby="sct scd">
+        <title id="sct">Landed cost per button set as the order grows</title>
+        <desc id="scd">Three lines for order sizes from 2 to 30 button sets. The China line falls steeply and the Amazon UK line less so, while the EU line stays roughly flat.</desc>
+      </svg>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-notes">
+    <div class="sect-head"><h2 id="h-notes">The rules, and where this could be wrong</h2></div>
+    <div class="notes">
+      <div class="note">
+        <h4>What changed on 1 July 2026</h4>
+        <p>The EU scrapped the &euro;150 duty-free threshold. Revenue charges <strong>&euro;3 per distinct product type</strong> in a parcel from outside the EU, and 23% VAT on goods <em>and</em> that duty. Amazon.co.uk counts as outside the EU; Amazon pays it at checkout. AliExpress and Temu collect VAT via IOSS but not reliably the duty &mdash; when they don&rsquo;t, An Post holds the parcel and charges <strong>&euro;6.95</strong> to process it. Temporary until July 2028.</p>
+      </div>
+      <div class="note">
+        <h4>Known soft spots</h4>
+        <ul>
+          <li><strong>The China unit price is the weakest input</strong>, which is why it has its own control. An earlier version used &euro;1.90 &mdash; the price of the 30 mm sets, not the 50 mm ones. Breakeven against Amazon.co.uk sits near &euro;3.50 a set.</li>
+          <li><strong>VAT-inclusive or not?</strong> AliExpress shows EU visitors VAT-inclusive prices; US-facing search results are not. Which one you read moves the China column ~20%.</li>
+          <li><strong>Per category or per parcel?</strong> Revenue says per distinct product type; one trade source reads it as per parcel. Revenue governs what you pay.</li>
+          <li><strong>The EU column is the least-evidenced.</strong> Amazon.ie&rsquo;s catalogue is thin here and this is priced off a handful of listings.</li>
+          <li>A <strong>&euro;2 EU handling fee per parcel</strong> is expected from November 2026. Not modelled; ordering now dodges it.</li>
+        </ul>
+      </div>
+      <div class="note">
+        <h4>Prices behind the model</h4>
+        <div class="tw"><table style="min-width:0">
+          <tbody>
+            <tr><td>4-pc set 50 mm, China</td><td class="num">&euro;3.00</td></tr>
+            <tr><td>Cut cards &times;10, China</td><td class="num">&euro;3.80</td></tr>
+            <tr><td>4-pc set 50 mm, Amazon UK</td><td class="num">&euro;3.84</td></tr>
+            <tr><td>Cut cards &times;10, Amazon UK</td><td class="num">&euro;4.79</td></tr>
+            <tr><td>3-pc set, Amazon.ie</td><td class="num">&euro;7.12</td></tr>
+            <tr><td>Redtooth kit, Amazon.ie</td><td class="num">&euro;9.86</td></tr>
+            <tr><td>All-in button, EU</td><td class="num">&euro;7.95</td></tr>
+          </tbody>
+        </table></div>
+        <p style="margin-top:9px">Amazon UK converted at &pound;1 = &euro;1.16, UK VAT stripped. Each Redtooth kit carries ten cut cards <em>and</em> a button set, so on the EU route a pack bought covers a set.</p>
+      </div>
+      <div class="note">
+        <h4>Sources</h4>
+        <ul>
+          <li><a href="https://www.revenue.ie/en/customs/individuals/relief-low-value-consignments/index.aspx">Revenue &mdash; de minimis relief removed</a></li>
+          <li><a href="https://www.consilium.europa.eu/en/press/press-releases/2025/12/12/customs-council-agrees-to-levy-customs-duty-on-small-parcels-as-of-1-july-2026/">Council of the EU &mdash; duty from 1 July 2026</a></li>
+          <li><a href="https://www.anpost.com/Post-Parcels/Receiving/Customs-Information">An Post &mdash; customs charges</a></li>
+          <li><a href="https://www.irishtimes.com/your-money/2026/07/01/everything-you-need-to-know-about-the-new-3-customs-charge/">Irish Times &mdash; the &euro;3 charge</a></li>
+          <li><a href="https://secretali.com/guide/aliexpress-shipping-time-2026">AliExpress shipping times 2026</a></li>
+          <li><a href="https://dodropshipping.com/temu-shipping-time/">Temu shipping times 2026</a></li>
+          <li><a href="https://www.pokerchipforum.com/threads/what-size-dealer-buttons-do-you-prefer.120979/">Dealer button sizing, players&rsquo; consensus</a></li>
+          <li><a href="https://www.amazon.co.uk/SGerste-Little-Dealer-Button-Holdem/dp/B08GPGDB7G">Amazon UK &mdash; 4-pc button set</a></li>
+          <li><a href="https://www.amazon.co.uk/SGerste-Poker-Cards-Blackjack-Casino/dp/B0871CMNCJ">Amazon UK &mdash; poker-size cut cards</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Everything recomputes from the controls.</span>
+    <span>Priced 4 Oct 2026 &middot; FX &pound;1 = &euro;1.16</span>
+  </footer>
+</div>
+
+<div id="tip" hidden role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var VAT = 0.23, DUTY = 3, ANPOST = 6.95, MATS = 8;
+  var TLMAX = 32;
+
+  var ROUTES = [
+    { key: "cn", name: "AliExpress / Temu", origin: "China direct", set: 3.00, cut: 3.80, allIn: 0 },
+    { key: "uk", name: "Amazon.co.uk",      origin: "Great Britain", set: 3.84, cut: 4.79, allIn: 0, lo: 3, hi: 6 },
+    { key: "eu", name: "Amazon.ie / EU",    origin: "Inside the EU", set: 7.12, cut: 9.86, allIn: 7.95, lo: 1, hi: 4 }
+  ];
+  var CN_SHIP = [
+    { label: "Temu express", lo: 3, hi: 8 },
+    { label: "AliExpress Choice", lo: 10, hi: 15 }
+  ];
+
+  var CHECKS = [
+    { id: "k1", t: "One seller, one basket", s: "Separate sellers ship separate consignments — each can draw its own €6.95." },
+    { id: "k2", t: "Cut cards read 63–64 × 88 mm in the spec table", s: "Not just “poker” in the title. This is the error that makes the purchase useless." },
+    { id: "k3", t: "Button sets read 50 mm, acrylic", s: "30 mm is a printed chip, not a dealer button." },
+    { id: "k4", t: "Duty shown at checkout, not left to An Post", s: "If it isn’t there, budget €6.95 and set the control above." },
+    { id: "k5", t: "Listing shows a real Irish delivery date", s: "“Ships worldwide” is not a date." },
+    { id: "k6", t: "Spare quantity decided before paying", s: "Going 10 → 20 sets adds goods but €0 of duty." },
+    { id: "k7", t: "Ordered", s: "Placed before November, to dodge the incoming €2-per-parcel EU handling fee." }
+  ];
+
+  var DEFAULTS = { sets: 10, cut: 2, cnPrice: 3.00, allin: true, risk: 0, ship: 0, checks: {} };
+  var state = JSON.parse(JSON.stringify(DEFAULTS));
+
+  var eur  = new Intl.NumberFormat("en-IE", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
+  var eur2 = new Intl.NumberFormat("en-IE", { style: "currency", currency: "EUR", minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+  /* ================= pricing ================= */
+  function price(r, s) {
+    if (r.key === "eu") {
+      var toBuy = Math.max(0, s.sets - s.cut);
+      var inc = toBuy * r.set + s.cut * r.cut + (s.allin ? s.sets * r.allIn : 0);
+      var g = inc / (1 + VAT);
+      return { total: inc, goods: g, duty: 0, vat: inc - g, fee: 0,
+               detail: toBuy + " sets + " + s.cut + " kits" + (s.allin ? " + " + s.sets + " all-in" : "") };
+    }
+    var unit = r.key === "cn" ? s.cnPrice : r.set;
+    var goods = s.sets * unit + s.cut * r.cut;
+    var cats = (s.sets > 0 ? 1 : 0) + (s.cut > 0 ? 1 : 0);
+    var duty = cats * DUTY;
+    var vat = (goods + duty) * VAT;
+    var fee = (r.key === "cn") ? (s.risk === 1 ? ANPOST : s.risk === 2 ? ANPOST * 2 : 0) : 0;
+    return { total: goods + duty + vat + fee, goods: goods, duty: duty, vat: vat, fee: fee,
+             detail: cats + (cats === 1 ? " product type" : " product types") + " dutiable" };
+  }
+  function window_(r, s) {
+    return r.key === "cn" ? CN_SHIP[s.ship] : { label: r.name, lo: r.lo, hi: r.hi };
+  }
+
+  var COL = { goods: "var(--s1)", duty: "var(--s2)", vat: "var(--s3)", fee: "var(--s4)" };
+  var NM  = { goods: "Goods", duty: "€3 duty", vat: "Irish VAT 23%", fee: "An Post handling" };
+
+  /* ================= tooltip ================= */
+  var tip = document.getElementById("tip");
+  function show(html, x, y) {
+    tip.innerHTML = html; tip.hidden = false;
+    var r = tip.getBoundingClientRect();
+    tip.style.left = Math.min(Math.max(8, x - r.width / 2), window.innerWidth - r.width - 8) + "px";
+    tip.style.top = (y - r.height - 12 < 8 ? y + 18 : y - r.height - 12) + "px";
+  }
+  function hide() { tip.hidden = true; }
+  document.addEventListener("scroll", hide, true);
+  function hoverable(el, html) {
+    el.addEventListener("mouseenter", function (e) { show(html, e.clientX, el.getBoundingClientRect().top); });
+    el.addEventListener("mousemove", function (e) { show(html, e.clientX, el.getBoundingClientRect().top); });
+    el.addEventListener("mouseleave", hide);
+  }
+
+  /* ================= comparison grid ================= */
+  var rowsEl = document.getElementById("rows");
+  var ctb = document.getElementById("ctb");
+
+  function renderRows() {
+    var data = ROUTES.map(function (r) { return { r: r, p: price(r, state), w: window_(r, state) }; });
+    var maxCost = Math.max.apply(null, data.map(function (d) { return d.p.total; })) || 1;
+    var best = data.reduce(function (a, b) { return b.p.total < a.p.total ? b : a; });
+
+    rowsEl.innerHTML = ""; ctb.innerHTML = "";
+
+    data.forEach(function (d) {
+      var row = document.createElement("div");
+      row.className = "cmp-row" + (d === best ? " pick" : "");
+
+      var nm = document.createElement("div");
+      nm.className = "rname";
+      var b = document.createElement("b"); b.textContent = d.r.name;
+      var sp = document.createElement("span"); sp.textContent = d.r.origin;
+      nm.appendChild(b); nm.appendChild(sp);
+      if (d === best) {
+        var pk = document.createElement("span");
+        pk.className = "pickmark"; pk.textContent = "Cheapest landed";
+        nm.appendChild(pk);
+      }
+      row.appendChild(nm);
+
+      var bw = document.createElement("div");
+      bw.className = "barwrap";
+      bw.innerHTML = '<span class="mlabel">Landed cost</span>';
+      var bar = document.createElement("div"); bar.className = "bar";
+      var segs = [["goods", d.p.goods], ["duty", d.p.duty], ["vat", d.p.vat], ["fee", d.p.fee]]
+        .filter(function (s) { return s[1] > 0.004; });
+      segs.forEach(function (s, i) {
+        var f = document.createElement("div");
+        f.className = "f" + (segs.length === 1 ? " only" : (i === segs.length - 1 ? " tail" : ""));
+        f.style.background = COL[s[0]];
+        f.style.flex = (s[1] / maxCost) + " 0 0";
+        hoverable(f, NM[s[0]] + "<br><b>" + eur2.format(s[1]) + "</b> &middot; " +
+          Math.round(s[1] / d.p.total * 100) + "% of landed");
+        if (s[1] / maxCost > 0.12) {
+          var il = document.createElement("span"); il.className = "il";
+          il.textContent = eur.format(s[1]); f.appendChild(il);
+        }
+        bar.appendChild(f);
+      });
+      var pad = document.createElement("div");
+      pad.style.flex = ((maxCost - d.p.total) / maxCost) + " 0 0";
+      bar.appendChild(pad);
+      bw.appendChild(bar);
+      row.appendChild(bw);
+
+      var cc = document.createElement("div");
+      cc.className = "cost-cell";
+      cc.innerHTML = '<span class="big"></span><span class="sm"></span>';
+      cc.querySelector(".big").textContent = eur.format(d.p.total);
+      cc.querySelector(".sm").textContent = eur2.format(d.p.total / MATS) + "/mat";
+      row.appendChild(cc);
+
+      var tw = document.createElement("div");
+      tw.className = "trackwrap";
+      tw.innerHTML = '<span class="mlabel">Days to the door</span>';
+      var track = document.createElement("div"); track.className = "track";
+      [7, 14, 21, 28].forEach(function (t) {
+        var g = document.createElement("div"); g.className = "g";
+        g.style.left = (t / TLMAX * 100) + "%"; track.appendChild(g);
+      });
+      var f2 = document.createElement("div"); f2.className = "f";
+      f2.style.left = (d.w.lo / TLMAX * 100) + "%";
+      f2.style.width = ((d.w.hi - d.w.lo) / TLMAX * 100) + "%";
+      hoverable(f2, d.w.label + "<br><b>" + d.w.lo + "–" + d.w.hi + " days</b> to a Dublin door");
+      track.appendChild(f2);
+      tw.appendChild(track);
+      row.appendChild(tw);
+
+      var dc = document.createElement("div");
+      dc.innerHTML = '<span class="big" style="font-size:16px"></span><span class="sm"></span>';
+      dc.querySelector(".big").textContent = d.w.lo + "–" + d.w.hi + "d";
+      dc.querySelector(".sm").textContent = d.r.key === "cn" ? d.w.label.split(" ")[1] || d.w.label : "";
+      row.appendChild(dc);
+
+      rowsEl.appendChild(row);
+
+      var tr = document.createElement("tr");
+      tr.innerHTML = "<td>" + d.r.name + "</td>" +
+        '<td class="num">' + eur2.format(d.p.goods) + "</td>" +
+        '<td class="num">' + (d.p.duty ? eur2.format(d.p.duty) : "—") + "</td>" +
+        '<td class="num">' + eur2.format(d.p.vat) + "</td>" +
+        '<td class="num">' + (d.p.fee ? eur2.format(d.p.fee) : "—") + "</td>" +
+        '<td class="num">' + eur2.format(d.p.total) + "</td>" +
+        '<td class="num">' + eur2.format(d.p.total / MATS) + "</td>";
+      ctb.appendChild(tr);
+    });
+
+    renderAxes(maxCost);
+    renderVerdict(data, best);
+  }
+
+  function renderAxes(maxCost) {
+    var ac = document.getElementById("axis-cost");
+    ac.innerHTML = "";
+    var stepC = maxCost > 120 ? 50 : maxCost > 60 ? 25 : 20;
+    for (var v = 0; v <= maxCost; v += stepC) {
+      var s = document.createElement("span");
+      s.style.left = (v / maxCost * 100) + "%";
+      if (v === 0) s.className = "l0";
+      s.textContent = v === 0 ? "€0" : "€" + v;
+      ac.appendChild(s);
+    }
+    var ad = document.getElementById("axis-days");
+    ad.innerHTML = "";
+    [0, 7, 14, 21, 28].forEach(function (t) {
+      var s = document.createElement("span");
+      s.style.left = (t / TLMAX * 100) + "%";
+      if (t === 0) s.className = "l0";
+      s.textContent = t === 0 ? "order" : t + "d";
+      ad.appendChild(s);
+    });
+  }
+
+  function renderVerdict(data, best) {
+    var k = {}; data.forEach(function (d) { k[d.r.key] = d.p.total; });
+    var gapUk = k.uk - k.cn, gapEu = k.eu - k.cn;
+    var w = window_(ROUTES[0], state);
+    var call, why;
+
+    if (gapUk >= 18) {
+      call = "Buy from China. " + eur.format(gapUk) + " cheaper than Amazon.co.uk.";
+      why = "At this basket the China route lands at <strong>" + eur.format(k.cn) + "</strong> against " +
+        eur.format(k.uk) + " from Amazon.co.uk — a gap wide enough to be worth the slower, less certain delivery. " +
+        w.label + " puts it on the table in " + w.lo + "–" + w.hi + " days.";
+    } else if (gapUk >= 8) {
+      call = "Close call. China saves " + eur.format(gapUk) + ", and that is thin.";
+      why = "China lands at <strong>" + eur.format(k.cn) + "</strong> against " + eur.format(k.uk) +
+        " from Amazon.co.uk. The saving survives a clean clearance and vanishes if An Post gets involved — " +
+        "switch the control above to see it go. Take " + w.label + " if you want the money, Amazon.co.uk if you want the certainty.";
+    } else {
+      call = "Buy from Amazon.co.uk. China only saves " + eur.format(Math.max(0, gapUk)) + " here.";
+      why = "At this unit price the China route lands at <strong>" + eur.format(k.cn) + "</strong> against " +
+        eur.format(k.uk) + " — inside the noise. Amazon pays the duty at checkout, delivers in 3–6 days " +
+        "instead of " + w.lo + "–" + w.hi + ", and takes a return without you posting it to Shenzhen.";
+    }
+    document.getElementById("v-call").textContent = call;
+    document.getElementById("v-why").innerHTML = why +
+      " The EU-domestic route costs <strong>" + eur.format(gapEu) + "</strong> more than China throughout" +
+      (state.allin ? ", almost all of it the all-in buttons — flip them off to see." : ".");
+  }
+
+  /* ================= scaling chart ================= */
+  function renderScale() {
+    var svg = document.getElementById("sc");
+    while (svg.lastChild && svg.lastChild.nodeName.toLowerCase() !== "desc") svg.removeChild(svg.lastChild);
+    var L = 52, R = 152, T = 16, B = 44, pw = 760 - L - R, ph = 330 - T - B;
+    var xMin = 2, xMax = 30, yMax = 20;
+    function X(v) { return L + (v - xMin) / (xMax - xMin) * pw; }
+    function Y(v) { return T + ph - Math.min(v, yMax) / yMax * ph; }
+    var ns = "http://www.w3.org/2000/svg";
+    function mk(t, a) { var e = document.createElementNS(ns, t); for (var k in a) e.setAttribute(k, a[k]); return e; }
+
+    [0, 5, 10, 15, 20].forEach(function (v) {
+      svg.appendChild(mk("line", { x1: L, x2: L + pw, y1: Y(v), y2: Y(v),
+        stroke: v === 0 ? "var(--baseline)" : "var(--grid)", "stroke-width": 1 }));
+      var t = mk("text", { x: L - 10, y: Y(v) + 4, "text-anchor": "end", class: "ax-label" });
+      t.textContent = "€" + v; svg.appendChild(t);
+    });
+    [2, 10, 20, 30].forEach(function (v) {
+      var t = mk("text", { x: X(v), y: T + ph + 20, "text-anchor": "middle", class: "ax-label" });
+      t.textContent = v; svg.appendChild(t);
+    });
+    var xt = mk("text", { x: L + pw / 2, y: T + ph + 38, "text-anchor": "middle", class: "ax-title" });
+    xt.textContent = "button sets ordered  (cut cards held at 2 packs)"; svg.appendChild(xt);
+    var yt = mk("text", { x: L - 10, y: T - 3, "text-anchor": "end", class: "ax-title" });
+    yt.textContent = "per set"; svg.appendChild(yt);
+
+    [["cn", "var(--s1)"], ["uk", "var(--s2)"], ["eu", "var(--s3)"]].forEach(function (pair) {
+      var r = ROUTES.filter(function (x) { return x.key === pair[0]; })[0];
+      var pts = [];
+      for (var n = xMin; n <= xMax; n++) {
+        var p = price(r, { sets: n, cut: 2, allin: true, risk: 0, cnPrice: state.cnPrice });
+        pts.push([n, p.total / n]);
+      }
+      var dstr = pts.map(function (p, i) { return (i ? "L" : "M") + X(p[0]).toFixed(1) + " " + Y(p[1]).toFixed(1); }).join(" ");
+      svg.appendChild(mk("path", { d: dstr, fill: "none", stroke: pair[1], "stroke-width": 2, "stroke-linejoin": "round" }));
+      var last = pts[pts.length - 1];
+      svg.appendChild(mk("circle", { cx: X(last[0]), cy: Y(last[1]), r: 4, fill: pair[1], stroke: "var(--surface)", "stroke-width": 2 }));
+      var lab = mk("text", { x: X(last[0]) + 12, y: Y(last[1]) + 4, class: "series-label", fill: pair[1] });
+      lab.textContent = r.name; svg.appendChild(lab);
+      var sub = mk("text", { x: X(last[0]) + 12, y: Y(last[1]) + 18, class: "ax-label" });
+      sub.textContent = eur2.format(last[1]) + " per set at 30"; svg.appendChild(sub);
+      pts.forEach(function (p) {
+        var hit = mk("circle", { cx: X(p[0]), cy: Y(p[1]), r: 9, fill: "transparent" });
+        hit.addEventListener("mouseenter", function (e) {
+          show(r.name + "<br><b>" + eur2.format(p[1]) + "</b> per set at " + p[0] + " sets", e.clientX, e.clientY);
+        });
+        hit.addEventListener("mouseleave", hide);
+        svg.appendChild(hit);
+      });
+    });
+  }
+
+  /* ================= checklist ================= */
+  var checksEl = document.getElementById("checks");
+  CHECKS.forEach(function (c) {
+    var l = document.createElement("label");
+    l.className = "check";
+    l.innerHTML = '<input type="checkbox" id="' + c.id + '"><span class="box"></span>' +
+                  '<span class="txt"><span></span><small></small></span>';
+    l.querySelector(".txt > span").textContent = c.t;
+    l.querySelector("small").textContent = c.s;
+    l.querySelector("input").addEventListener("change", function (e) {
+      state.checks[c.id] = e.target.checked;
+      save();
+    });
+    checksEl.appendChild(l);
+  });
+
+  /* ================= paint ================= */
+  function paint() {
+    document.getElementById("o-sets").textContent = state.sets;
+    document.getElementById("o-cut").textContent = state.cut;
+    document.getElementById("o-price").textContent = eur2.format(state.cnPrice);
+    document.getElementById("c-allin").checked = state.allin;
+    document.getElementById("t-allin").textContent = state.allin ? "Included" : "Skipped";
+    Array.prototype.forEach.call(document.querySelectorAll("[data-set]"), function (b) {
+      var kv = b.dataset.set.split(":");
+      b.setAttribute("aria-pressed", String(state[kv[0]] === Number(kv[1])));
+    });
+    CHECKS.forEach(function (c) {
+      document.getElementById(c.id).checked = !!state.checks[c.id];
+    });
+    renderRows();
+    renderScale();
+  }
+
+  /* ================= controls ================= */
+  var LIM = { sets: [1, 40], cut: [0, 12], cnPrice: [1.5, 5] };
+  Array.prototype.forEach.call(document.querySelectorAll("[data-step]"), function (b) {
+    b.addEventListener("click", function () {
+      var kv = b.dataset.step.split(":"), key = kv[0], delta = Number(kv[1]);
+      var v = state[key] + delta, lim = LIM[key];
+      state[key] = Math.round(Math.min(lim[1], Math.max(lim[0], v)) * 100) / 100;
+      paint(); save();
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-set]"), function (b) {
+    b.addEventListener("click", function () {
+      var kv = b.dataset.set.split(":");
+      state[kv[0]] = Number(kv[1]);
+      paint(); save();
+    });
+  });
+  document.getElementById("c-allin").addEventListener("change", function (e) {
+    state.allin = e.target.checked; paint(); save();
+  });
+  var tt = document.getElementById("tt"), ct = document.getElementById("ct");
+  tt.addEventListener("click", function () {
+    var open = ct.hidden;
+    ct.hidden = !open;
+    tt.setAttribute("aria-expanded", String(open));
+    tt.textContent = open ? "Hide the table" : "Show as a table";
+  });
+
+  /* ================= persistence ================= */
+  var docRef = null, lastWrite = 0, pending = null;
+  var dot = document.getElementById("savedot"), txt = document.getElementById("savetxt");
+
+  function mark(kind) {
+    dot.className = "dot " + (kind === "account" ? "ok" : "local");
+    txt.textContent = kind === "account"
+      ? "Saved in this browser"
+      : "Saved in this browser only";
+  }
+
+  function localSave() {
+    try { localStorage.setItem("pokerkit", JSON.stringify(state)); } catch (e) { /* blocked */ }
+  }
+  function localLoad() {
+    try {
+      var raw = localStorage.getItem("pokerkit");
+      if (raw) merge(JSON.parse(raw));
+    } catch (e) { /* blocked */ }
+  }
+  function merge(incoming) {
+    if (!incoming || typeof incoming !== "object") return;
+    Object.keys(DEFAULTS).forEach(function (k) {
+      if (k === "checks") {
+        state.checks = (incoming.checks && typeof incoming.checks === "object") ? incoming.checks : {};
+      } else if (typeof incoming[k] === typeof DEFAULTS[k]) {
+        state[k] = incoming[k];
+      }
+    });
+  }
+
+  function save() {
+    localSave();
+    if (!docRef) return;
+    lastWrite = Date.now();
+    clearTimeout(pending);
+    pending = setTimeout(function () {
+      docRef.set(JSON.parse(JSON.stringify(state))).catch(function () { mark("local"); });
+    }, 400);
+  }
+
+  localLoad();
+  paint();
+  mark("local");
+
+  (function connect() {
+    if (!window.claude || !window.claude.use) return;
+    Promise.all([window.claude.use("db"), window.claude.use("user")]).then(function (res) {
+      var db = res[0], user = res[1];
+      if (!db || !user) return;
+      return user.id().then(function (uid) {
+        if (!uid) return;
+        docRef = db.doc("data/users/" + uid + "/kit");
+        docRef.onSnapshot(function (snap) {
+          mark("account");
+          if (!snap.exists) { save(); return; }
+          if (Date.now() - lastWrite < 1500) return;   // our own echo, or mid-edit
+          merge(snap.data());
+          paint();
+        }, function () { mark("local"); });
+      });
+    }).catch(function () { /* stay local */ });
+  })();
+})();
+</script>
+</body>
+</html>
