@@ -170,6 +170,27 @@
   .order-foot { font-size: 13.5px; color: var(--ink-2); margin-top: 14px; max-width: 78ch; }
   .order-foot strong { color: var(--ink); font-weight: 600; }
 
+  .sidecar {
+    margin-top: 20px; padding-top: 18px;
+    border-top: 1px solid var(--hairline);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .sidecar-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+  .sidecar p { font-size: 13.5px; color: var(--ink-2); max-width: 78ch; }
+  .sidecar p strong { color: var(--ink); font-weight: 600; }
+  .sidecar .muted-note { font-size: 12.5px; color: var(--muted); }
+  .totals { margin-top: 6px; display: flex; flex-direction: column; gap: 0; max-width: 360px; }
+  .totals div {
+    display: flex; justify-content: space-between; gap: 18px;
+    padding: 7px 0; border-bottom: 1px solid var(--hairline); font-size: 13.5px;
+  }
+  .totals div span { color: var(--ink-2); }
+  .totals div b { font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+  .totals .grand { border-bottom: 0; border-top: 1px solid var(--rule); font-size: 15px; padding-top: 10px; }
+  .totals .grand b { font-size: 17px; }
+  .totals .per { border-bottom: 0; padding-top: 2px; }
+  .totals .per span, .totals .per b { color: var(--muted); font-size: 12px; }
+
   .verdict {
     background: var(--surface);
     border: 1px solid var(--hairline);
@@ -460,6 +481,29 @@
       to Amazon.co.uk closes to &euro;2.51 and is no longer worth the wait. Set the price control
       below to what the basket actually says.
     </p>
+
+    <div class="sidecar">
+      <div class="sidecar-head">
+        <h3>Mats, bought separately</h3>
+        <span class="stamp">Amazon.ie &middot; Monday</span>
+      </div>
+      <p>Newverest Poker Table Top 70&Prime; &times; 35&Prime; (178 &times; 89 cm), 8 at &euro;54 free delivery:
+      <strong>&euro;432</strong>. The China route does not pay at this size. An AliExpress 180 &times; 90
+      rubber mat lands near <strong>&euro;288</strong> for eight once the tariff and VAT go on, only
+      &euro;12 under a European specialist, for one to three weeks and no recourse. Above &euro;150 a
+      consignment loses the flat &euro;3 duty and pays the ordinary tariff, so the arithmetic from
+      the buttons order stops carrying over.</p>
+      <p class="muted-note">Poker Merchant's 180 &times; 90 at &euro;34.95 was the nearest rival:
+      nine clear their &euro;300 free-shipping threshold at &euro;314.55, one more mat for &euro;117 less,
+      in 3&ndash;4 working days. Passed over deliberately &mdash; the Newverest units have been handled
+      and fit, and &euro;54 is under Newverest's own &dollar;69.97 site price.</p>
+      <div class="totals">
+        <div><span>Buttons and cut cards</span><b>&euro;70.36</b></div>
+        <div><span>Mats</span><b>&euro;432.00</b></div>
+        <div class="grand"><span>Project total</span><b>&euro;502.36</b></div>
+        <div class="per"><span>Per playing surface</span><b>&euro;62.80</b></div>
+      </div>
+    </div>
   </section>
 
   <div class="verdict">

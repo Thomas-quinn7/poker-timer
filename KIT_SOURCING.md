@@ -37,6 +37,36 @@ consumables and the cheap ones curl.
 Amazon UK closes to €2.51 on this basket and is no longer worth the wait. At
 that point buy the two Amazon SKUs in the sources below instead.
 
+### Mats
+
+Newverest Poker Table Top 70 x 35 inches (178 x 89 cm), Amazon.ie, 8 at €54
+with free delivery. **€432.**
+
+Checked against the alternatives and the China route does not pay here. An
+AliExpress 180x90 rubber mat lands at about €288 for eight once the tariff and
+VAT go on, which is only €12 under a European specialist, for one to three
+weeks of waiting and no recourse. Above €150 a consignment loses the €3 flat
+duty and pays the ordinary tariff, so the clean arithmetic from the buttons
+order does not carry over.
+
+The closest thing to a better buy was Poker Merchant's Table Top 180x90 at
+€34.95: nine of them clear their €300 free-shipping threshold at €314.55, so
+one more mat than needed for €117 less than the Amazon order, delivered in 3
+to 4 working days. Passed over deliberately, because the Newverest units have
+been handled and confirmed to fit the tables, they arrive Monday, and mats are
+the item where quality was the stated priority. €54 is also below Newverest's
+own site price of $69.97, so there is no reseller markup being paid.
+
+### Project total
+
+| | |
+|---|---|
+| Buttons and cut cards, Temu | €70.36 |
+| Mats, Amazon.ie | €432.00 |
+| **Total** | **€502.36** |
+
+€62.80 per playing surface, for eight surfaces fully kitted.
+
 ---
 
 ## The thing that changed
