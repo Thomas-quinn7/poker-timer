@@ -26,7 +26,8 @@ Two versions:
 `poker_blinds.jpeg` is the printed blind-structure sheet the default levels
 are based on. `poker_blinds_johnny.jpeg` is the same sheet with Johnny's
 Revolut QR (@johnpa61dj) for buy-ins, and `poker_blinds_walaa.jpeg` the same
-sheet with Walaa's Revolut QR (@paywalaa). `poker_blinds_cash.jpeg` is the cash-game
+sheet with Walaa's Revolut QR (@paywalaa), rebuys until 7:30 PM, 3 buy-ins
+max, no add-ons. `poker_blinds_cash.jpeg` is the cash-game
 version: 5c/10c blinds, chips white 5c, red 25c, green 50c, blue €1, orange €2,
 purple €5, yellow €10, €5/€10/€15 buy-ins, and Michael's Revolut QR
 (@michaelt8b).
